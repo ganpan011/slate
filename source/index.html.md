@@ -1,5 +1,5 @@
 ---
-title: API Reference For Hulan ( 배포 테스트 )
+title: API Reference
 
 language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
   - shell
@@ -24,6 +24,8 @@ meta:
 ---
 
 # Introduction
+
+For Hulan ( 배포 테스트 )
 
 Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
