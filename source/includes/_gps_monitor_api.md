@@ -277,7 +277,7 @@ infowindows | O          | 주요지점 정보 리스트
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
-[Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.1%5D%20IMOS%20%EC%9D%BC%EB%B0%98%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/workplaceGpsMonitoringDataUsingGET)
+기존 API 사용. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.1%5D%20IMOS%20%EC%9D%BC%EB%B0%98%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/workplaceGpsMonitoringDataUsingGET)
 
 ### HTTP Request
 
@@ -321,7 +321,7 @@ GPS 근로자 검색하여 위치 정보를 제공한다.
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
-[Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.1%5D%20IMOS%20%EC%9D%BC%EB%B0%98%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/searchWorkerGpsLocationUsingGET)
+기존 API 사용. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.1%5D%20IMOS%20%EC%9D%BC%EB%B0%98%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/searchWorkerGpsLocationUsingGET)
 
 
 ### HTTP Request

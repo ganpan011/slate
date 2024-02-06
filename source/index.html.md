@@ -14,6 +14,7 @@ includes:
   - ble_monitor_api
   - gps_monitor_api
   - marker_setting_api
+  - construct_section_api
   - cctv_api
   - device_api
   - ap_sensor_api
@@ -34,6 +35,33 @@ meta:
 # iMOS 현장관제 Renewal
 
 휴랜 iMOS 현장관제 Renewal 을 위한 API 입니다.
+
+## 변경 이력
+
+변경일 | 변경 내용
+--------- |----------
+2024-02-06 | 초안 배포
+2024-02-14 | 진행현황 바 정보 변경 ( pgrbar_no -> bar_no, bar_idx -> item_idx, pitem_no 삭제 )
+    -      | 화면 설정을 위한 구성 정보 조회 구현 및 Swagger 추가
+    -      | 공사 구간 마커 및 진행현황 구성 정보 조회/저장 구현 및 Swagger 추가 ( URL 변경 )
+    -      | 기존 API 여부 및 미구현 여부 추가
+    -      | 공사 구간 및 현황 API 섹션 분리 추가
+
+
+## 미구현 리스트
+
+1. 현장 메인(조감도) 내 표시 정보 조회
+2. 현장 공사구간 내 표시 정보 조회
+3. BLE 근로자 위치 검색
+4. 현장 GPS 내 표시 fence 및 주요지점 정보 조회
+5. 공사현황 정보 리스트 조회
+6. 공사현황 정보 수정
+7. 디바이스 정보 조회
+8. AP Sensor 정보 조회
+9. QRSticker 리스트 검색
+10. QRSticker 정보 조회
+
+
 
 ## 인증 방식
 
@@ -70,13 +98,8 @@ meta:
 기본적인 API 의 응답 포맷은 JSON 입니다.
 
 항목 | 필수 여부(M/O) | 데이터 타입 | 설명
---------- |----------|--------- 
+--------- |----------|--------- |---------
 return_code | M | Number | 결과 코드. 0 : 성공, 그외 설패  
 return_message | M | String | 결과 상세 설명             
 context | O |   | 요청에 대한 응답 정보. 단순 value, Object, List 등 API 에 따라 타입이 다르며 없을 수도 있다.  
-
-
-
-
-
 

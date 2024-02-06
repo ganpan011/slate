@@ -192,12 +192,13 @@ lnk_cstrt_no	 | O          | 링크 공사구역 관리번호. 마커 유형이 
 label_text	 | O          | 라벨 표시 텍스트. 마커 유형이 라벨(1) 인 경우 사용
 icon_type	 | O          | 아이콘 유형. 마커 유형이 아이콘(2) 인 경우 사용
 icon_url	 | O          | icon_url.  마커 유형이 아이콘(2) 인 경우 사용
-ref_device_idx | O          | 디바이스 관리번호. 마커 유형이 IOT센서(4), BLE GW(6) 인 경우 사용
-ref_sensor_idx | O          | AP 센서 관리번호. 마커 유형이 AP센서(5) 인 경우 사용
-ref_qr_stk_no | O          | 진출/입 QR 관리번호. 마커 유형이 QR(7) 인 경우 사용
-ref_cctv_no | O          | CCTV 관리번호. 마커 유형이 CCTV(8) 인 경우 사용
+ref_device_idx | O          | 디바이스 관리번호. 마커 유형이 IOT센서(3), BLE GW(5) 인 경우 사용
+ref_sensor_idx | O          | AP 센서 관리번호. 마커 유형이 AP센서(4) 인 경우 사용
+ref_qr_stk_no | O          | 진출/입 QR 관리번호. 마커 유형이 QR(6) 인 경우 사용
+ref_cctv_no | O          | CCTV 관리번호. 마커 유형이 CCTV(7) 인 경우 사용
 option | O          | 마커 옵션 설정 정보
 style | O          | 마커 style 설정 정보
+
 
 ### 마커 유형
 
@@ -238,11 +239,10 @@ icon_size | 아이콘 사이즈
 
 ```json
 {
-  "pgrbar_no" : 1,
+  "bar_no" : 1,
   "items" : [
     {
-      "pitem_no" : 1,
-      "bar_idx" : 1,
+      "item_idx" : 1,
       "show_item" : 1,
       "start_position" : 1,
       "ref_cstrt_no" : 3,
@@ -267,15 +267,14 @@ icon_size | 아이콘 사이즈
 
 항목 | 필수 여부(M/O) | 설명
 --------- |------------| -----------
-pgrbar_no	 | M          | 진행현황바 관리번호
+bar_no	 | M          | 진행현황바 관리번호
 items	 | M          | 진행현황 정보 리스트
 
 #### 진행현황 아이템 정보 리스트
 
 항목 | 필수 여부(M/O) | 설명
 --------- |------------| -----------
-pitem_no  | M          | 진행현황 아이템 관리번호
-bar_idx	 | M          | 진행현황 바 내 순번. 1부터 시작
+item_idx	 | M          | 진행현황 바 내 순번. 1부터 시작
 ref_cstrt_no | M          | 표시될 진행현황 공사 구간 관리번호
 show_item	 | M          | 진행현황 표시 여부.  0: 표시하지 않음(blank item). 1: 진행형황 표시
 start_position	 | M          | 진행현황 바 내 시작 위치. 0 ~ 100.00

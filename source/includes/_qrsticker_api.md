@@ -37,6 +37,10 @@ QRSticker 리스트 검색을 제공합니다.
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
+<aside class="warning">
+API 미구현 
+</aside>
+
 ### HTTP Request
 
 `POST /imoa/api/qrsticker/export`
@@ -80,6 +84,10 @@ QRSticker 정보를 제공합니다.
 
 <aside class="notice">
 사용자 인증 ( HTTP Bearer ) 필요 
+</aside>
+
+<aside class="warning">
+API 미구현 
 </aside>
 
 ### HTTP Request

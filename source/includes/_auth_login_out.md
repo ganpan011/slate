@@ -43,7 +43,7 @@ Token 획득 후 localStorage 에 저장하여 브라우저 새로고침 및 브
 HTTP Basic 인증 필요 
 </aside>
 
-[Swagger](https://ras.hulandev.co.kr/hma/swagger-ui/index.html#/OAuth%20API%20(%20%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%ED%8F%AC%ED%95%A8%20)%20/imosLoginMemberUsingPOST)
+기존 API 사용. [Swagger](https://ras.hulandev.co.kr/hma/swagger-ui/index.html#/OAuth%20API%20(%20%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%ED%8F%AC%ED%95%A8%20)%20/imosLoginMemberUsingPOST)
 
 
 ### HTTP Request
@@ -82,7 +82,7 @@ mb_pwd | M       | String | 사용자 패스워드
 사용자 인증 ( HTTP Bearer ) 필요
 </aside>
 
-[Swagger](https://ras.hulandev.co.kr/hma/swagger-ui/index.html#/%EC%82%AC%EC%9A%A9%EC%9E%90%20%EA%B4%80%EB%A6%AC/logoutMemberUsingGET)
+기존 API 사용. [Swagger](https://ras.hulandev.co.kr/hma/swagger-ui/index.html#/%EC%82%AC%EC%9A%A9%EC%9E%90%20%EA%B4%80%EB%A6%AC/logoutMemberUsingGET)
 
 ### HTTP Request
 
@@ -124,7 +124,7 @@ Token 자동 갱신은 관리자 사이트의 경우 명시적으로 사용자�
 HTTP Basic 인증 필요 
 </aside>
 
-[Swagger](https://ras.hulandev.co.kr/hma/swagger-ui/index.html#/OAuth%20API%20(%20%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%ED%8F%AC%ED%95%A8%20)%20/checkTokenUsingGET)
+기존 API 사용. [Swagger](https://ras.hulandev.co.kr/hma/swagger-ui/index.html#/OAuth%20API%20(%20%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%ED%8F%AC%ED%95%A8%20)%20/checkTokenUsingGET)
 
 ### HTTP Request
 
@@ -178,7 +178,7 @@ Refresh Token 정보를 이용하여 신규 Token 정보를 획득하기 위한 
 HTTP Basic 인증 필요 
 </aside>
 
-[Swagger](https://ras.hulandev.co.kr/hma/swagger-ui/index.html#/OAuth%20API%20(%20%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%ED%8F%AC%ED%95%A8%20)%20/refreshTokenUsingGET)
+기존 API 사용. [Swagger](https://ras.hulandev.co.kr/hma/swagger-ui/index.html#/OAuth%20API%20(%20%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%ED%8F%AC%ED%95%A8%20)%20/refreshTokenUsingGET)
 
 ### HTTP Request
 

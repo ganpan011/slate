@@ -43,6 +43,8 @@ CCTV 리스트 검색을 제공합니다.
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
+기존 API 사용. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%ED%98%84%EC%9E%A5%20CCTV%20%EA%B4%80%EB%A6%AC%20API/exportUsingPOST_6)
+
 ### HTTP Request
 
 `POST /imoa/api/device/cctv/export`
@@ -92,6 +94,8 @@ CCTV Play 를 위한 정보를 제공합니다.
 <aside class="notice">
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
+
+기존 API 사용. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%ED%98%84%EC%9E%A5%20CCTV%20%EA%B4%80%EB%A6%AC%20API/viewUsingGET) 
 
 ### HTTP Request
 

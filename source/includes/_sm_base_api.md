@@ -48,7 +48,7 @@
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
-[Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.2%5D%20IMOS%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/imosMainUsingPOST)
+기존 API 사용. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.2%5D%20IMOS%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/imosMainUsingPOST)
 
 ### HTTP Request
 
@@ -92,7 +92,7 @@ list | M | List<WorkplaceInfo> | 지원 가능 현장 리스트. 현장 정보 �
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
-[Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%ED%98%84%EC%9E%A5%20%EA%B4%80%EB%A6%AC/workplaceDetailUsingGET)
+기존 API 사용.  [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%ED%98%84%EC%9E%A5%20%EA%B4%80%EB%A6%AC/workplaceDetailUsingGET)
 
 ### HTTP Request
 
@@ -119,7 +119,7 @@ wp_id | M          | string | 현장 아이디
   "deploy_page":1,
   "weather":true,
   "notice":true,
-  "dust":true
+  "dust":false
 }
 ```
 
@@ -232,7 +232,7 @@ wp_id | M          | string | 현장 아이디
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
-[Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.2%5D%20IMOS%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/workplaceMainUsingPOST)
+기존 API 사용. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.2%5D%20IMOS%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/workplaceMainUsingPOST)
 
 
 ### HTTP Request
@@ -251,7 +251,7 @@ wp_no | M          | number | 현장 관리번호
 --------- |------------| -----------| -----------
 workplace | M       | number | 현장 정보 포함 여부. 0: 미포함, 1: 포함
 deploy_page | M          | number | 접속 메인 페이지 번호. 메인 페이지는 1
-dust | M       | number | 미세먼지 정보 포함 여부. 0: 미포함, 1: 포함
+dust | M       | number | 미세먼지 정보 포함 여부. 0: 미포함, 1: 포함. ( 메인 상단 미세먼지 표출하지 않음 )
 notice | M       | number | 공지사항 정보 포함 여부. 0: 미포함, 1: 포함
 weather | M       | number | 날씨 정보 포함 여부. 0: 미포함, 1: 포함
 

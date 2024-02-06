@@ -93,6 +93,10 @@ AP Sensor 정보를 제공합니다.
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
+<aside class="warning">
+API 미구현 
+</aside>
+
 ### HTTP Request
 
 `GET /imoa/api/device/apsensor/{si_idx}`

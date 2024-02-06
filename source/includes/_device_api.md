@@ -43,6 +43,8 @@
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
+기존 API 사용. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%ED%98%84%EC%9E%A5%20%EB%94%94%EB%B0%94%EC%9D%B4%EC%8A%A4%20%EC%A0%95%EB%B3%B4%20%EA%B4%80%EB%A6%AC/exportUsingPOST_5)
+
 ### HTTP Request
 
 `POST /imoa/api/device/export`
@@ -97,6 +99,11 @@ device_category | M          | 디바이스 유형 카테고리. ( 1: IOT 장치
 <aside class="notice">
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
+
+<aside class="warning">
+API 미구현 
+</aside>
+
 
 ### HTTP Request
 
