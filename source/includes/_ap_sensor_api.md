@@ -41,30 +41,31 @@ AP Sensor 리스트 검색을 제공합니다.
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
+신규 API 구현. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20AP%20Sensor%20API%20/qrstickerListUsingGET)
+
 ### HTTP Request
 
-`POST /imoa/api/device/apsensor/export`
+`GET /imoa/api/monitor/4.3/workplace/{wp_no}/apsensor`
 
-### Request BODY
+### Path variable
 
-항목 | 필수 여부(M/O) | 설명
---------- |------------| -----------
-search_name | M          | 검색대상. COMPLEX : 전체
-search_value | M          | 검색값
-wp_no | M          | 현장 관리번호
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------| -----------| -----------
+wp_no | M          | number | 현장 관리번호
 
 ### Response Body
 
-항목 | 필수 여부(M/O) | 설명
---------- |------------| -----------
-si_idx | M          | AP 센서 관리번호
-si_type | M          | AP 센서 유형
-si_code | M          | AP 센서 코드
-sd_name | M          | AP 센서 구역명
-si_place1  | M          | 위치1
-si_place2  | M          | 위치2
-major  | M          | AP 센서 major
-minor | M          | AP 센서 minor
+항목 | 필수 여부(M/O) | 데이터 타입      | 설명
+--------- |------------|-------------| -----------
+si_idx | M          | number      | AP 센서 관리번호
+si_type | M          | string      | AP 센서 유형
+si_code | M          | string      | AP 센서 코드
+sd_name | M          | string      | AP 센서 구역명
+si_place1  | M          | string      | 위치1
+si_place2  | M          | string      | 위치2         
+major  | M          | number | AP 센서 major 
+minor | M          | number | AP 센서 minor 
+
 
 ## AP Sensor 정보 조회
 
@@ -93,31 +94,30 @@ AP Sensor 정보를 제공합니다.
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
-<aside class="warning">
-API 미구현 
-</aside>
+신규 API 구현. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20AP%20Sensor%20API%20/qrstickerDetailUsingGET)
 
 ### HTTP Request
 
-`GET /imoa/api/device/apsensor/{si_idx}`
+`GET /imoa/api/monitor/4.3/workplace/{wp_no}/apsensor/{si_idx}`
 
 ### Path variable
 
-항목 | 필수 여부(M/O) | 설명
---------- |------------| -----------
-si_idx | M          | AP 센서 관리번호
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------| -----------| -----------
+wp_no | M          | number | 현장 관리번호
+si_idx | M          | number | AP 센서 관리번호
 
 
 ### Response Body
 
-항목 | 필수 여부(M/O) | 설명
---------- |------------| -----------
-si_idx | M          | AP 센서 관리번호
-si_type | M          | AP 센서 유형
-si_code | M          | AP 센서 코드
-sd_name | M          | AP 센서 구역명
-si_place1  | M          | 위치1
-si_place2  | M          | 위치2
-major  | M          | AP 센서 major
-minor | M          | AP 센서 minor
+항목 | 필수 여부(M/O) | 데이터 타입      | 설명
+--------- |------------|-------------| -----------
+si_idx | M          | number      | AP 센서 관리번호
+si_type | M          | string      | AP 센서 유형
+si_code | M          | string      | AP 센서 코드
+sd_name | M          | string      | AP 센서 구역명
+si_place1  | M          | string      | 위치1
+si_place2  | M          | string      | 위치2
+major  | M          | number | AP 센서 major
+minor | M          | number | AP 센서 minor 
 

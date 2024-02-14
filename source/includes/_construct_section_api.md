@@ -69,7 +69,8 @@ cstrt_name | M          | 공사구간명
 full_name | M          | 공사구간 전체명 ( 상위 공사구간이 있을 경우 상위공사구간명 + '/' + 공사구간명
 
 
-## 공사현황 정보 리스트 조회
+
+## 전체 공사진행 현황 조회
 
 > 응답 전문 예시
 
@@ -79,11 +80,13 @@ full_name | M          | 공사구간 전체명 ( 상위 공사구간이 있을 
   "return_message": "Success",
   "context": {
     "total_progress": 33,
+    "total_construct_distance" : 1444,
+    "total_progress_distance" : 185,
     "list": [
       {
         "cstrt_no": 1,
         "cstrt_name": "상단",
-        "total_distance" : 1444,
+        "construct_distance" : 1444,
         "progress_distance" : 185,
         "depth" : 3.984
       }
@@ -92,16 +95,13 @@ full_name | M          | 공사구간 전체명 ( 상위 공사구간이 있을 
 }
 ```
 
-공사 현황 정보를 제공합니다. ( 공사 현황 컴포넌트 )
+전체 공사진행 현황 및 개별 공사진행현황 리스트를 제공합니다. ( 공사 현황 컴포넌트 )
 
 <aside class="notice">
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
-<aside class="warning">
-API 미구현 
-</aside>
-
+신규 API 구현. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20%EA%B3%B5%EC%82%AC%20%EA%B5%AC%EA%B0%84%20API%20/constructSectionProgressUsingGET)
 
 ### HTTP Request
 
@@ -118,11 +118,11 @@ wp_no | M          | 현장 관리번호
 항목 | 필수 여부(M/O) | 설명
 --------- |------------| -----------
 total_progress | M          | 전체 진행율
-total_distance | M          | 전체 공사거리(단위는 m)
-progress_distance | M          | 전체 진행거리(단위는 m)
+total_construct_distance | M          | 전체 공사거리(단위는 m)
+total_progress_distance | M          | 전체 진행거리(단위는 m)
 list.cstrt_no | M          | 공사구간 관리번호
 list.cstrt_name | M          | 공사구간명
-list.total_progress | M          | 총 공사거리(단위는 m)
+list.construct_distance | M          | 총 공사거리(단위는 m)
 list.progress_distance | M          | 진행거리(단위는 m)
 list.depth | O          | 심도(단위는 m)
 
@@ -148,15 +148,13 @@ list.depth | O          | 심도(단위는 m)
 }
 ```
 
-공사 현황 정보를 수정합니다. ( 공사 현황 컴포넌트 )
+공사진행 정보를 수정합니다.
 
 <aside class="notice">
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
-<aside class="warning">
-API 미구현 
-</aside>
+신규 API 구현. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20%EA%B3%B5%EC%82%AC%20%EA%B5%AC%EA%B0%84%20API%20/updateConstructSectionProgressUsingPUT)
 
 
 ### HTTP Request
