@@ -155,14 +155,59 @@ wr4 | M          | 협력사 번호
   "grid_x" : 10.12,
   "grid_y" : 98.99,
   "attached_target" : 1,
-  "lnk_cstrt_no" : 2,
   "label_text" : "라벨 표시 텍스트",
-  "icon_type" : "아이콘 타입코드",
-  "icon_url" : "아이콘 URL",
+  "lnk_cstrt_no" : 2,
+  "ap_sensor_stat" : {
+    "caution_count" : 3,
+    "danger_worker_count" : 1,
+    "worker_count" : 2
+  },
+  "icon_type" : 1,
+  "icon_info" : {
+    "icon_type" : 1,
+    "icon_usage" : 1,
+    "icon_type_name" : "아이콘명",
+    "icon_url" : "아이콘 URL"
+  },
   "ref_device_idx" : 14,
+  "device_info" : {
+    "idx" : 14,
+    "display_name" : "디바이스명",
+    "device_type" : 14,
+    "device_type_name" : "디바이스 유형명",
+    "status" : 1,
+    "dv_status" : 1
+  },
   "ref_sensor_idx" : 3,
+  "ap_sensor_info" : {
+    "si_idx" : 14,
+    "si_type" : "위험센서",
+    "sd_name" : "센서 구역명",
+    "si_place1" : "위치1",
+    "si_place2" : "위치2",
+    "equipment_icon_url_list" :  [],
+    "default_color" : "기본 색상",
+    "support_flash" : "flash 지원여부",
+    "flash_color" : "flash 색상",
+    "worker_count" : 40,
+    "danger_worker_count" : 5,
+    "caution_count" : 1,
+    "marker" : 1
+  },
   "ref_qr_stk_no" : 11,
+  "qr_stk_info" : {
+    "qr_stk_no" : 14,
+    "qr_stk_name" : "qr sticker 명",
+    "qr_type" : 1,
+    "inout_type" : 1
+  },
   "ref_cctv_no" : 44,
+  "cctv_info" : {
+    "cctv_no" : 14,
+    "cctv_name" : "CCTV명",
+    "cctv_kind" : 1,
+    "install_type" : 1
+  },
   "option" : {
     "show_name" : 1,
     "show_icon" : 1,
@@ -176,31 +221,98 @@ wr4 | M          | 협력사 번호
     "icon_size" : 10
   }
 }
+
 ```
 
-마커 정보
+### 마커 정보
 
-항목 | 필수 여부(M/O) | 설명
---------- |------------| -----------
-mk_no	 | M          | 마커 관리번호
-mk_type	 | M          | 마커 유형 
-mk_name	 | M          | 마커명
-grid_x	 | M          | 마커 위치 x 축 좌표  
-grid_y | M          | 마커 위치 y 축 좌표
-attached_target | M          | 마커 부착 목표물. 1: 공사구간, 2: 진행현황바
-lnk_cstrt_no	 | O          | 링크 공사구역 관리번호. 마커 유형이 라벨(1), 아이콘(2) 인 경우 사용
-label_text	 | O          | 라벨 표시 텍스트. 마커 유형이 라벨(1) 인 경우 사용
-icon_type	 | O          | 아이콘 유형. 마커 유형이 아이콘(2) 인 경우 사용
-icon_url	 | O          | icon_url.  마커 유형이 아이콘(2) 인 경우 사용
-ref_device_idx | O          | 디바이스 관리번호. 마커 유형이 IOT센서(3), BLE GW(5) 인 경우 사용
-ref_sensor_idx | O          | AP 센서 관리번호. 마커 유형이 AP센서(4) 인 경우 사용
-ref_qr_stk_no | O          | 진출/입 QR 관리번호. 마커 유형이 QR(6) 인 경우 사용
-ref_cctv_no | O          | CCTV 관리번호. 마커 유형이 CCTV(7) 인 경우 사용
-option | O          | 마커 옵션 설정 정보
-style | O          | 마커 style 설정 정보
+항목 | 필수 여부(M/O) | 데이터 타입  | 설명
+--------- |------------|---------| -----------
+mk_no	 | M          | number  | 마커 관리번호
+mk_type	 | M          | number  | 마커 유형 
+mk_name	 | M          | string  | 마커명
+grid_x	 | M          | decimal | 마커 위치 x 축 좌표  
+grid_y | M          | decimal | 마커 위치 y 축 좌표
+attached_target | M          | number  | 마커 부착 목표물. 1: 공사구간, 2: 진행현황바
+lnk_cstrt_no	 | O          | number  | 링크 공사구역 관리번호. 마커 유형이 라벨(1), 아이콘(2) 인 경우 사용
+label_text	 | O          | string  | 라벨 표시 텍스트. 마커 유형이 라벨(1) 인 경우 사용
+ap_sensor_stat| O          | object  | Ap 센서 감지 근로자 현황. 마커 유형이 라벨(1) 이고 링크된 공사구역이 있는 경우 사용. 설정화면에서는 미사용
+icon_type	 | O          | number  | 아이콘 유형. 마커 유형이 아이콘(2) 인 경우 사용
+icon_info | O          | object  | 아이콘 정보. 마커 유형이 아이콘(2) 인 경우 사용
+ref_device_idx | O          | number  | 디바이스 관리번호. 마커 유형이 IOT센서(3), BLE GW(5) 인 경우 사용
+device_info | O          | object  | 디바이스 정보. 마커 유형이 IOT센서(3), BLE GW(5) 인 경우 사용
+ref_sensor_idx | O          | number  | AP 센서 관리번호. 마커 유형이 AP센서(4) 인 경우 사용
+ref_qr_stk_no | O          | number  | 진출/입 QR 관리번호. 마커 유형이 QR(6) 인 경우 사용
+ref_cctv_no | O          | number  | CCTV 관리번호. 마커 유형이 CCTV(7) 인 경우 사용
+option | O          | object  | 마커 옵션 설정 정보
+style | O          | object  | 마커 style 설정 정보
+
+### ap_sensor_stat ( Ap 센서 감지 근로자 현황 )
+
+항목 | 필수 여부(M/O) | 데이터 타입  | 설명
+--------- |------------|---------| -----------
+worker_count	 | M          | number  | 근로자 감지수
+danger_worker_count	 | M          | number  | 위험센서 근로자 감지수
+caution_count	 | M          | number  | 건강유의 근로자 감지수
+
+### icon_info ( ICON 정보 )
+
+항목 | 필수 여부(M/O) | 데이터 타입  | 설명
+--------- |------------|---------| -----------
+icon_type | M          | number | 아이콘 타입 관리번호
+icon_usage | M          | number | 아이콘 사용처 코드 ( 0: 미지정, 1: 마커 )
+icon_type_name | M          | number | 아이콘 타입명
+icon_url | M          | string | 아이콘 URL
 
 
-### 마커 유형
+### device_info ( 디바이스 정보 )
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------|--------| -----------
+idx | M          | number | 디바이스(장치) 관리번호
+display_name | M          | string | 디바이스 표시명
+device_type | M          | number | 디바이스 유형
+device_type_name | M          | string | 디바이스 유형명
+status | M          | number | 디바이스 위험상태. 0: 정상, 1: 위험
+dv_status | M          | string | 디바이스 장치 동작 상태.  1: 정상, 2:OFF, 3: 측정불가, 4: 수집 지연
+
+### ap_sensor_info ( AP 센서 정보 )
+
+
+항목 | 필수 여부(M/O) | 데이터 타입      | 설명
+--------- |------------|-------------| -----------
+si_idx | M          | number      | AP 센서 관리번호
+si_type | M          | string      | AP 센서 유형
+sd_name | M          | string      | AP 센서 구역명
+si_place1  | M          | string      | 위치1
+si_place2  | M          | string      | 위치2
+worker_count	 | M          | number  | 근로자 감지수
+danger_worker_count	 | M          | number  | 위험센서 근로자 감지수
+caution_count	 | M          | number  | 건강유의 근로자 감지수
+default_color  | M          | number | 디폴트 색상
+flash_color | M          | number | flash 색상
+support_flash | M          | number | flash 지원여부
+marker | M          | number | marker 표시 여부. 0: 미표시, 1: 표시
+
+### qr_stk_info ( QR 스티커 정보 )
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------| -----------| -----------
+qr_stk_no | M          | number | QR 스티커 관리번호
+qr_stk_name | M          | string | QR 스티커명
+qr_type | M          | number | QR 스티커 유형. 1: 출/퇴근, 2: 진/출입
+inout_type | M          | number | 진/출입유형. 1: 진입, 2: 진출, 3: 진/출입 선택
+
+### cctv_info ( CCTV 정보 )
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------|--------| -----------
+cctv_no | M          | number  | CCTV 관리번호
+cctv_name | M          | string | CCTV명                                        
+cctv_kind | M          | number | CCTV 유형. 0: 일반, 1: IntelliVix, 2: Emstone    
+install_type | M          | number | 설치 유형. 0: 고정형, 1: 이동형
+
+#### 마커 유형
 
 유형 코드 |  설명
 --------- |------------
@@ -212,7 +324,8 @@ style | O          | 마커 style 설정 정보
 6 | QR
 7 | CCTV 
 
-### 마커 옵션 설정 정보
+
+#### 마커 옵션 설정 정보
 
  옵션 |  설명
 --------- |------------
@@ -230,7 +343,7 @@ font_color | 폰트 색상
 bg_color | 배경 색상
 icon_size | 아이콘 사이즈
 
-마커 옵션과 style 은 따로 정의된 규격이 없기에 필요시 자유롭게 추가/삭제하여도 무방합니다.
+마커 옵션과 style 은 필요시 자유롭게 추가하여도 무방합니다.
 
 
 ## BleProgressBar

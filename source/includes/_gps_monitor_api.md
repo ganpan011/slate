@@ -1,6 +1,6 @@
 # GPS Monitor API
 
-BLE mode 화면 표시를 위한 구성 정보 조회 API 입니다.
+GPS mode 화면 표시를 위한 구성 정보 조회 API 입니다.
 
 
 ## 현장 GPS 내 표시 fence 및 주요지점 정보 조회
@@ -65,15 +65,7 @@ BLE mode 화면 표시를 위한 구성 정보 조회 API 입니다.
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
-<aside class="warning">
-API 미구현 
-</aside>
 
-기존 API 대체 ( Deprecated )
-
-1. GPS Fence 정보 조회 [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.1%5D%20IMOS%20%EC%9D%BC%EB%B0%98%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/workplaceGpsFenceUsingGET)
- 
-2. 주요지점 정보 조회 [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.1%5D%20IMOS%20%EC%9D%BC%EB%B0%98%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/workplaceInfowindowUsingGET)
 
 ### HTTP Request
 

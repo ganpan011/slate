@@ -40,7 +40,7 @@
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
-신규 API 구현. [Swagger]()
+신규 API 구현. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20Device(%EC%9E%A5%EC%B9%98)%20API%20/exportUsingPOST_6)
 
 ### HTTP Request
 
@@ -95,7 +95,7 @@ mac_address  | M          | string | mac address
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
-신규 API 구현. [Swagger]()
+신규 API 구현. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20Device(%EC%9E%A5%EC%B9%98)%20API%20/detailUsingGET_4)
 
 ### HTTP Request
 
