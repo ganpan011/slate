@@ -279,7 +279,7 @@ progressbar | O          | BleProgressBar | 공사 진행 현황 정보. [BlePro
 
 ### HTTP Request
 
-`POST /imoa/api/monitor/4.3/workplace/{wp_no}/ble`
+`POST /imoa/api/monitor/4.3/workplace/{wp_no}/ble/main`
 
 
 ### Path variable

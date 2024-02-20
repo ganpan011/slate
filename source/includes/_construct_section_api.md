@@ -127,6 +127,56 @@ list.progress_distance | M          | 진행거리(단위는 m)
 list.depth | O          | 심도(단위는 m)
 
 
+
+## 공사 진행현황 정보 조회
+
+> 응답 전문 예시
+
+```JSON
+{
+  "return_code": 0,
+  "return_message": "Success",
+  "context": {
+    "cstrt_no": 1,
+    "cstrt_name": "공사구간명",
+    "construct_distance": 1080,
+    "progress_distance": 81,
+    "depth": 80.230
+  }
+}
+```
+
+특정 공사구간의 진행현황 정보를 조회합니다.
+
+<aside class="notice">
+사용자 인증 ( HTTP Bearer ) 필요 
+</aside>
+
+신규 API 구현. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20%EA%B3%B5%EC%82%AC%20%EA%B5%AC%EA%B0%84%20API%20/updateConstructSectionProgressUsingPUT)
+
+
+### HTTP Request
+
+`GET /imoa/api/monitor/4.3/workplace/{wp_no}/construct_section/progress/{cstrt_no}`
+
+### Path variable
+
+항목 | 필수 여부(M/O) | 설명
+--------- |------------| -----------
+wp_no | M          | 현장 관리번호
+cstrt_no | M          | 공사구간 관리번호
+
+### Response Body
+
+항목 | 필수 여부(M/O) | 설명
+--------- |------------| -----------
+cstrt_no | M          | 공사구간 관리번호
+cstrt_name | M          | 공사구간명
+construct_distance | M          | 총 공사거리(단위는 m)
+progress_distance | M          | 진행거리(단위는 m)
+depth | O          | 심도(단위는 m)
+
+
 ## 공사현황 정보 수정
 
 

@@ -57,6 +57,11 @@ V0.4 | 2024-02-19 | 현장 GPS 내 표시 fence 및 주요지점 정보 조회 �
    - | -          | BLE mode 화면 표시를 위한 구성 정보 조회 API 추가 ( API 변경 )
    - | -          | AP 센서 감지 근로자 검색 및 위치 조회 API 추가 ( API 변경 )
    - | -          | Model 내 마커 정보 상세 변경
+V0.5 | 2024-02-20 | 현장 메인(조감도) 내 표시 정보 조회 HTTP Request URL 오류 수정 ( /ble -> /ble/main )
+   - | -          | 현장 GPS 내 표시 fence 및 주요지점 정보 조회 HTTP Request method 오류 수정 ( POST -> GET )
+   - | -          | 장비 및 근로자 GPS 위치 정보 조회 HTTP Request method 및 URL 오류 수정 ( POST -> GET, /monitor/4.2 -> monitor/4.1 )
+   - | -          | 공사 진행 현황 정보 조회 API 추가, GPS 근로자 검색 추가
+
 
 ## 미구현 리스트
 

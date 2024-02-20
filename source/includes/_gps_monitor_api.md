@@ -69,7 +69,7 @@ GPS mode 화면 표시를 위한 구성 정보 조회 API 입니다.
 
 ### HTTP Request
 
-`POST /imoa/api/monitor/4.3/workplace/{wp_no}/gps/coordinate`
+`GET /imoa/api/monitor/4.3/workplace/{wp_no}/gps/coordinate`
 
 ### Response Body
 
@@ -273,7 +273,7 @@ infowindows | O          | 주요지점 정보 리스트
 
 ### HTTP Request
 
-`POST /imoa/api/monitor/4.2/workplace/{wp_no}/gps`
+`GET /imoa/api/monitor/4.1/workplace/{wp_no}/gps`
 
 ### Response Body
 
@@ -294,6 +294,75 @@ workers | O          | List<Worker> | 근로자 데이터 리스트
 {
   "return_code" : 0,
   "return_message" : "Success",
+  "context" : [
+    {
+      "wp_no": 1,
+      "wp_name": "현장명",
+      "coop_no": 1,
+      "coop_name": "협력사명",
+      "mb_no": 1,
+      "mb_name": "근로자명",
+      "mb_level_name": "근로자 등급명",
+      "telephone": "전화번호",
+      "longitude": 126.643978,
+      "latitude": 37.3834973,
+      "measure_time": "2024-02-20T07:32:00.000+00:00"
+    }
+  ]
+}
+```
+
+GPS 근로자 검색하여 위치 정보를 제공한다.
+
+<aside class="notice">
+사용자 인증 ( HTTP Bearer ) 필요 
+</aside>
+
+기존 API 사용. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.1%5D%20IMOS%20%EC%9D%BC%EB%B0%98%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/searchGpsUserByNameUsingGET)
+
+
+### HTTP Request
+
+`GET /imoa/api/monitor/4.1/workplace/{wp_no}/gps/user`
+
+### Path Variable
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------| -----------| -----------
+wp_no | M          | number | 현장 관리번호
+
+
+### Request Parameter
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------|--------| -----------
+mb_name | M          | string | 근로자명
+
+### Response Body
+
+항목 | 필수 여부(M/O) | 데이터 타입        | 설명
+--------- |------------|---------------| -----------
+wp_no | M          | number | 현장 관리번호
+wp_name | M          | string | 현장명
+coop_no | M          | number | 협력사 관리번호
+coop_name | M          | string | 협력사명
+mb_no | M          | number | 사용자 관리번호
+mb_name | M          | string | 사용자명
+telephone | M          | string | 전화번호
+mb_level_name | M          | string       | 사용자 등급명
+longitude | M          | decimal       | 경도
+latitude | M          | decimal | 위도
+measure_time | M          | number | 측정시간
+
+
+## GPS 근로자 위치 조회
+
+> 응답 전문 예시
+
+```JSON
+{
+  "return_code" : 0,
+  "return_message" : "Success",
   "context" : {
     "longitude" : 127.1471356,
     "latitude" : 37.5357359,
@@ -307,13 +376,13 @@ workers | O          | List<Worker> | 근로자 데이터 리스트
 }
 ```
 
-GPS 근로자 검색하여 위치 정보를 제공한다.
+GPS 근로자 GPS 위치 정보를 제공한다.
 
 <aside class="notice">
 사용자 인증 ( HTTP Bearer ) 필요 
 </aside>
 
-기존 API 사용. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.1%5D%20IMOS%20%EC%9D%BC%EB%B0%98%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/searchWorkerGpsLocationUsingGET)
+기존 API 사용. [Swagger](http://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.1%5D%20IMOS%20%EC%9D%BC%EB%B0%98%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/searchWorkerGpsLocationUsingGET)
 
 
 ### HTTP Request
@@ -330,7 +399,8 @@ mb_no | M          | number | 사용자 관리번호
 
 ### Response Body
 
-항목 | 필수 여부(M/O) | 데이터 타입        | 설명
---------- |------------|---------------| -----------
-longitude | M          | decimal       | 경도
+항목 | 필수 여부(M/O) | 데이터 타입  | 설명
+--------- |------------|---------| -----------
+longitude | M          | decimal | 경도
 latitude | M          | decimal | 위도
+measure_time | M          | number  | 측정시간
