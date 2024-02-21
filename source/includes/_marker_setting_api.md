@@ -79,73 +79,62 @@ cstrt_name | M          | string                                                
 full_name | M          | string | 전체 공사구간명 ( 상위 공사구간이 있는 경우 공사구간명 + '/' + 공사구간명. 없으면 공사구간명 ) 
 
 
-
 ## 공사 구간 마커 및 진행현황 구성 정보 조회
 
-> 응답 전문 예시
+> 응답 전문 예시.   [BleMarker](#blemarker)  및 [BleProgressBar](#bleprogressbar) 참고
 
 ```json
 {
-  "return_code": 0,
-  "return_message": "Success",
   "context": {
     "cstrt_no": 1,
     "cstrt_name": "상단",
     "image_url": "공사 구간 이미지 URL",
     "marker_list": [
-      {
-        "mk_type" : 1,
-        "mk_name" : "마커명",
-        "lnk_cstrt_no" : 2,
-        "label_text" : "라벨 표시 텍스트",
-        "icon_type" : "아이콘 URL",
-        "icon_type_name" : "아이콘 URL",
-        "icon_url" : "아이콘 URL",
-        "grid_x" : 10.12,
-        "grid_y" : 98.99,
-        "ref_cstrt_no" : 1,
-        "ref_device_idx" : 14,
-        "ref_sensor_idx" : 3,
-        "ref_qr_stk_no" : 11,
-        "ref_cctv_no" : 44,
-        "option" : {
-          "show_name" : 1,
-          "show_icon" : 1,
-          "show_count" : 1,
-          "auto_hide" : 1
+      {  
+        "mk_no": 1,
+        "mk_name": "표시명(라벨 표시 텍스트)",
+        "mk_type": 1,
+        "grid_x": 10.12,
+        "grid_y": 98.99,
+        "label_text": "라벨 표시 텍스트",
+        "lnk_cstrt_no": 1,
+        "attached_target": 1,
+        "ap_sensor_stat" : {
+          "caution_count" : 3,
+          "danger_worker_count" : 1,
+          "worker_count" : 2
         },
-        "style" : {
-          "font_size" : "font 사이즈",
-          "font_color" : "font 색상",
-          "bg_color" : "백그라운드 색상",
-          "icon_size" : 10
+        "option": {
+        },
+        "style": {
+          "font_size": "font 사이즈",
+          "font_color": "font 색상",
+          "bg_color": "백그라운드 색상"
         }
       }
     ],
-    "progressbar" : {
-      "pgrbar_no" : 1,
-      "items" : [
+    "progressbar": {
+      "bar_no": 1,
+      "items": [
         {
-          "bar_idx" : 1,
-          "show_item" : 1,
-          "start_position" : 1,
-          "ref_cstrt_no" : 3,
-          "tbm_front_cctv_no" : 1,
-          "tbm_back_cctv_no" : 1,
-          "option" : {
-            "direction" : 1,
-            "show_distance" : 1,
-            "show_tbm" : 1
-          },
-          "style" : {
-            "height" : "높이",
-            "color" : "색상",
-            "font_size" : "font 사이즈"
+          "bar_no": 1,
+          "item_idx": 1,
+          "show_item": 1,
+          "start_position": 22.22,
+          "ref_cstrt_no": 3,
+          "prg_info": {
+            "cstrt_no": 3,
+            "cstrt_name": "공사구간명",
+            "construct_distance": 3212,
+            "progress_distance": 122,
+            "depth": 1.22
           }
         }
       ]
     }
-  }
+  },
+  "return_code": 0,
+  "return_message": "string"
 }
 ```
 

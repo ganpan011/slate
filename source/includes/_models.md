@@ -175,8 +175,19 @@ wr4 | M          | 협력사 번호
     "display_name" : "디바이스명",
     "device_type" : 14,
     "device_type_name" : "디바이스 유형명",
-    "status" : 1,
-    "dv_status" : 1
+    "mac_address" : "Mac address",
+    "status": 1,
+    "dv_status": 1,
+    "state": 1,
+    "state_name": "장치 상태명",
+    "show_popup": true,
+    "popup_display_items": [
+      {
+        "code": "DEVICE_TYPE",
+        "name": "구분",
+        "value": "센서"
+      }
+    ]
   },
   "ref_sensor_idx" : 3,
   "ap_sensor_info" : {
@@ -267,14 +278,37 @@ icon_url | M          | string | 아이콘 URL
 
 ### device_info ( 디바이스 정보 )
 
-항목 | 필수 여부(M/O) | 데이터 타입 | 설명
---------- |------------|--------| -----------
-idx | M          | number | 디바이스(장치) 관리번호
-display_name | M          | string | 디바이스 표시명
-device_type | M          | number | 디바이스 유형
-device_type_name | M          | string | 디바이스 유형명
-status | M          | number | 디바이스 위험상태. 0: 정상, 1: 위험
-dv_status | M          | string | 디바이스 장치 동작 상태.  1: 정상, 2:OFF, 3: 측정불가, 4: 수집 지연
+항목 | 필수 여부(M/O) | 데이터 타입  | 설명
+--------- |------------|---------| -----------
+idx | M          | number  | 디바이스(장치) 관리번호
+display_name | M          | string  | 디바이스 표시명
+device_type | M          | number  | 디바이스 유형
+device_type_name | M          | string  | 디바이스 유형명
+status | M          | number  | 디바이스 측정치 상태. 디바이스 유형별로 상이
+dv_status | M          | number  | 디바이스 동작 상태. 1: 정상, 2:OFF, 3: 측정불가, 4: 수집 지연
+state | M          | number  | 디바이스 상태. 1: 정상, 2: 위험 발생, 3: 장치 비정상
+state_name | M          | string  | 디바이스 상태명
+show_popup | M          | boolean | 디바이스 상세 팝업 지원 유무
+popup_display_items | M          | List   | 상세 팝업 표시 데이터 항목
+popup_display_items.code | M          | List   | 항목 코드
+popup_display_items.name | M          | List   | 항목명
+popup_display_items.value | M          | List   | 항목값
+
+
+show_popup 이 true 인 경우 해당 디바이스 마커 클릭시 팝업 노출 
+
+1. 팝업 제목은 "장치정보 - ${device_type_name}"
+ 
+2. 팝업 표시 정보는 popup_display_items 의 정보를 ${name} | ${value} 로 차례대로 표시 
+ 
+3. popup_display_items.code 가 DASHIBOARD_POPUP 인 경우는 알림 ON/OFF 기능이 들어간 항목이어야 한다.
+ - 기존 화재 감지기 상세 팝업 참고 
+
+
+<aside class="notice">
+state 에 따라 정상/위험/비정상 아이콘으로 변경되어 표시되어야 한다. ( 현재는 화재 감지기만 가능 )
+</aside>
+
 
 ### ap_sensor_info ( AP 센서 정보 )
 
@@ -352,24 +386,44 @@ icon_size | 아이콘 사이즈
 
 ```json
 {
-  "bar_no" : 1,
-  "items" : [
+  "bar_no": 1,
+  "items": [
     {
-      "item_idx" : 1,
-      "show_item" : 1,
-      "start_position" : 1,
+      "bar_no": 1,
+      "item_idx": 1,
+      "show_item": 1,
+      "start_position": 22.22,
       "ref_cstrt_no" : 3,
-      "tbm_front_cctv_no" : 1,
-      "tbm_back_cctv_no" : 1,
-      "option" : {
-        "direction" : 1,
-        "show_distance" : 1,
-        "show_tbm" : 1
+      "prg_info" : {
+        "cstrt_no" : 3,
+        "cstrt_name" : "공사구간명",
+        "construct_distance" : 3212,
+        "progress_distance" : 122,
+        "depth" : 1.22
       },
-      "style" : {
-        "height" : "높이",
-        "color" : "색상",
-        "font_size" : "font 사이즈"
+      "tbm_front_cctv_no": 1,
+      "tbm_front_cctv_info" : {
+        "cctv_no" : 14,
+        "cctv_name" : "CCTV명",
+        "cctv_kind" : 1,
+        "install_type" : 1
+      },
+      "tbm_back_cctv_no": 1,
+      "tbm_back_cctv_info" : {
+        "cctv_no" : 14,
+        "cctv_name" : "CCTV명",
+        "cctv_kind" : 1,
+        "install_type" : 1
+      },
+      "option": {
+        "direction": 1,
+        "show_distance": 1,
+        "show_tbm": 1
+      },
+      "style": {
+        "height": "높이",
+        "color": "색상",
+        "font_size": "font 사이즈"
       }
     }
   ]
@@ -388,15 +442,30 @@ items	 | M          | 진행현황 정보 리스트
 항목 | 필수 여부(M/O) | 설명
 --------- |------------| -----------
 item_idx	 | M          | 진행현황 바 내 순번. 1부터 시작
-ref_cstrt_no | M          | 표시될 진행현황 공사 구간 관리번호
+ref_cstrt_no | M          | 표시될 공사 구간 관리번호
+prg_info | M | 표시될 공사 구간의 진행현황 정보
 show_item	 | M          | 진행현황 표시 여부.  0: 표시하지 않음(blank item). 1: 진행형황 표시
 start_position	 | M          | 진행현황 바 내 시작 위치. 0 ~ 100.00
 tbm_front_cctv_no | M          | TBM 전방 CCTV 관리번호
+tbm_front_cctv_info | M          | TBM 전방 CCTV 정보 ( cctv_info 참고 )
 tbm_back_cctv_no | M          | TBM 후방 CCTV 관리번호
+tbm_back_cctv_info | M          | TBM 후방 CCTV 정보. ( cctv_info 참고 )
 option | O          | 진행현황 아이템 옵션 설정 정보
 style | O          | 진행현황 아이템 style 설정 정보
 
-### 진행현황 아이템 옵션 설정 정보
+
+#### prg_info ( 진행 현황 ) 정보
+
+항목 | 필수 여부(M/O) | 설명
+--------- |------------| -----------
+cstrt_no	 | M          | 공사 구간 관리번호
+cstrt_name | M          | 공사 구간 관리번호명
+construct_distance | M | 총 공사 거리
+progress_distance	 | M          | 진행 거리
+depth	 | M          | 심도
+
+
+#### 진행현황 아이템 옵션 설정 정보
 
 옵션 |  설명
 --------- |------------

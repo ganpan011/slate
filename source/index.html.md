@@ -61,11 +61,12 @@ V0.5 | 2024-02-20 | 현장 메인(조감도) 내 표시 정보 조회 HTTP Reque
    - | -          | 현장 GPS 내 표시 fence 및 주요지점 정보 조회 HTTP Request method 오류 수정 ( POST -> GET )
    - | -          | 장비 및 근로자 GPS 위치 정보 조회 HTTP Request method 및 URL 오류 수정 ( POST -> GET, /monitor/4.2 -> monitor/4.1 )
    - | -          | 공사 진행 현황 정보 조회 API 추가, GPS 근로자 검색 추가
+V0.6 | 2024-02-21 | IOT 장치(마커) 정보 내 state 및 상세 팝업을 위한 정보 추가. ( models 내 BleMarker > device_info 참고 )   
+   - | -          | 진행현황바 정보 내 진행현황 수치 및 TBM 전/후방 cctv 정보 추가. ( models 내 BleProgressBar 참고 )
+
 
 
 ## 미구현 리스트
-
-1. 각 디바이스 유형별 상세 상태 및 측정데이터 정보 API 개발
 
 
 ## 인증 방식

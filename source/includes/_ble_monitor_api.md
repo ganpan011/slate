@@ -2,7 +2,11 @@
 
 BLE mode 화면 표시를 위한 구성 정보 조회 API 입니다.
 
-> 전체 응답 전문 예시
+
+## 현장 공사구간 내 표시 정보 조회
+
+
+> 전체 응답 전문 예시. [BleMarker](#blemarker)  및 [BleProgressBar](#bleprogressbar) 참고
 
 ```json
 {
@@ -67,8 +71,28 @@ BLE mode 화면 표시를 위한 구성 정보 조회 API 입니다.
           "display_name" : "디바이스명",
           "device_type" : 14,
           "device_type_name" : "디바이스 유형명",
-          "status" : 1,
-          "dv_status" : 1
+          "status": 1,
+          "dv_status": 1,
+          "state": 1,
+          "state_name": "장치 상태명",
+          "show_popup": true,
+          "popup_display_items": [
+            {
+              "code": "DEVICE_TYPE",
+              "name": "구분",
+              "value": "기울기 센서"
+            },
+            {
+              "code": "MEASURE_TIME",
+              "name": "데이터 수신시각",
+              "value": "2024-02-16T01:30:00.000+00:00"
+            },
+            {
+              "code": "DASHIBOARD_POPUP",
+              "name": "알림 상태",
+              "value": 1
+            }
+          ]
         }, 
         "option": {
           "show_name" : 1
@@ -118,8 +142,12 @@ BLE mode 화면 표시를 위한 구성 정보 조회 API 입니다.
           "display_name" : "디바이스명",
           "device_type" : 14,
           "device_type_name" : "디바이스 유형명",
-          "status" : 1,
-          "dv_status" : 1
+          "status": 1,
+          "dv_status": 1,
+          "state": 1,
+          "state_name": "장치 상태명",
+          "show_popup": false,
+          "popup_display_items": []
         },
         "option": {
           "show_icon" : 1,
@@ -222,8 +250,6 @@ BLE mode 화면 표시를 위한 구성 정보 조회 API 입니다.
   "return_message": "string"
 }
 ```
-
-## 현장 공사구간 내 표시 정보 조회
 
 현장 공사구간 영역에 표시될 마커 및 공사 진행 정보를 제공한다.
 
