@@ -66,6 +66,7 @@ V0.6 | 2024-02-21 | IOT 장치(마커) 정보 내 state 및 상세 팝업을 위
 V0.7 | 2024-02-23 | IOT 장치(마커) 의 BLE 위치 정보 조회 API 추가 ( Device 내 위치 정보 조회 참고 )
    - | -          | BLE Mode 에서 CCTV Play 를 위한 CCTV 플로팅 팝업 관련 API 추가 ( BLE Monitor API 내 CCTV 플로팅 팝업 참고 ) 
    - | -          | Marker 셋팅시 화면 설정을 위한 구성 정보에 해당 현장의 메인 컴포넌트 정보 ( 이름 및 height, width ) 추가
+V0.8 | 2024-02-26 | QR 당일 이력 조회 팝업을 위한 API 추가
 
 
 ## 미구현 리스트
