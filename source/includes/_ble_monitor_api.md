@@ -532,7 +532,7 @@ AP 센서 감지된 특정 근로자의 AP 센서 위치 정보를 제공한다.
 
 `GET /imoa/api/monitor/4.3/workplace/{wp_no}/apsensor/user/{mb_no}`
 
-### Request Path
+### Path Variable
 
 항목 | 필수 여부(M/O) | 데이터 타입 | 설명
 --------- |------------| -----------| -----------
@@ -559,5 +559,184 @@ si_place1 | O          | string | 위치1
 si_place2 | O          | string | 위치2
 in_out_type | O          | string | 센서 접근 상태 구분
 slr_datetime | O          | number | 센서 접근 시간
+
+
+
+## CCTV 플로팅 팝업 리스트 조회 
+
+> 응답 전문 예시
+
+```JSON
+{
+  "return_code": 0,
+  "return_message": "Success",
+  "context": [
+    {
+      "mk_no": 1,
+      "cctv_no": 1,
+      "cctv_name": "카메라",
+      "cctv_url": "CCTV URL",
+      "cctv_kind": 0,
+      "conn_type": "NVR",
+      "install_type": 0,
+      "id": "계정 아이디",
+      "pwd": "계정 패스워드",
+      "floating_popup": {
+        "grid_x": 10.00,
+        "grid_y": 20.00,
+        "height": 200.00,
+        "width": 500.00
+      }
+    }
+  ]
+}
+```
+
+BLE 공사구간 화면에 플로팅 되어야 하는 CCTV Play 팝업 리스트를 제공한다. 
+
+해당 리스트 조회 후 CCTV Play 를 위한 플로팅 팝업 화면 생성 후 CCTV Play 를 시작하여야 한다. 
+
+<aside class="notice">
+사용자 인증 ( HTTP Bearer ) 필요 
+</aside>
+
+신규 API 구현. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20BLE%20Mode%20API%20/cctvFloatingListUsingGET)
+
+
+### HTTP Request
+
+`GET /imoa/api/monitor/4.3/workplace/{wp_no}/ble/{cstrt_no}/cctv/floating`
+
+### Path Variable
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------| -----------| -----------
+wp_no | M          | number | 현장 관리번호
+cstrt_no | M          | number | 공사구간 관리번호
+
+### Response Body
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------|-------------| -----------
+cctv_no | M          | number | CCTV 관리번호
+cctv_name | M          | string | CCTV명
+cctv_kind | M          | number | CCTV 유형. 0: 일반, 1: IntelliVix, 2: Emstone
+cctv_url | M          | string | CCTV 연동을 위한 URL. ( MJPEG 방식 플레이 필요 정보 )
+conn_type | M          | string | CCTV 연동 방식
+install_type | M          | number | 설치 유형. 0: 고정형, 1: 이동형                        
+id | M          | number | CCTV Play 를 위한 계정 아이디
+pwd | M          | number | CCTV Play 를 위한 계정 패스워드
+floating_popup | M          | Object | 플로팅 팝업 위치 및 사이즈
+
+#### floating_popup
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------|-------------| -----------
+grid_x	 | M          | decimal | 팝업 x 축 좌표
+grid_y | M          | decimal | 팝업 y 축 좌표
+height	 | M          | decimal | 팝업 높이
+width | M          | decimal | 팝업 길이
+
+
+
+
+## CCTV 플로팅 팝업 오폰(위치 이동시) 요청
+
+> 요청 전문 예시
+
+```JSON
+{
+  "grid_x": 10.00,
+  "grid_y": 20.00,
+  "height": 200.00,
+  "width": 500.00
+}
+``` 
+
+> 응답 전문 예시
+
+```JSON
+{
+  "return_code": 0,
+  "return_message": "Success",
+  "context": {
+    "mk_no": 1,
+    "cctv_no": 1,
+    "cctv_name": "카메라",
+    "cctv_url": "CCTV URL",
+    "cctv_kind": 0,
+    "conn_type": "NVR",
+    "install_type": 0,
+    "id": "계정 아이디",
+    "pwd": "계정 패스워드",
+    "floating_popup": {
+      "grid_x": 10.00,
+      "grid_y": 20.00,
+      "height": 200.00,
+      "width": 500.00
+    }
+  }
+}
+```
+
+BLE 공사구간 CCTV 마커 클릭시 플로팅 팝업 화면 생성 후 플로팅 팝업 위치 지정 및 CCTV Play 를 위한 정보 요청을 위해 이용하는 API 입니다.
+
+플로팅 팝업의 위치를 이동시에도 해당 API 를 호출하여야 합니다.  
+
+<aside class="notice">
+사용자 인증 ( HTTP Bearer ) 필요 
+</aside>
+
+신규 API 구현. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20BLE%20Mode%20API%20/openCctvFloatingUsingPOST)
+
+
+### HTTP Request
+
+`POST /imoa/api/monitor/4.3/workplace/{wp_no}/ble/{cstrt_no}/cctv/floating/{mk_no}`
+
+### Path Variable
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------| -----------| -----------
+wp_no | M          | number | 현장 관리번호
+cstrt_no | M          | number | 공사구간 관리번호
+mk_no | M          | number | 마커 관리번호
+
+### Request Body
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------|-------------| -----------
+grid_x	 | M          | decimal | 팝업 x 축 좌표
+grid_y | M          | decimal | 팝업 y 축 좌표
+height	 | M          | decimal | 팝업 높이
+width | M          | decimal | 팝업 길이
+
+### Response Body
+
+CCTV 플로팅 팝업 리스트 조회의 항목 참고
+
+
+## CCTV 플로팅 팝업 종료 요청
+
+BLE 공사구간 CCTV 플로팅 팝업 종료시 해당 API 를 호출하여야 합니다.
+
+<aside class="notice">
+사용자 인증 ( HTTP Bearer ) 필요 
+</aside>
+
+신규 API 구현. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20BLE%20Mode%20API%20/updateCctvFloatingInfoUsingDELETE)
+
+
+### HTTP Request
+
+`DELETE /imoa/api/monitor/4.3/workplace/{wp_no}/ble/{cstrt_no}/cctv/floating/{mk_no}`
+
+### Path Variable
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------| -----------| -----------
+wp_no | M          | number | 현장 관리번호
+cstrt_no | M          | number | 공사구간 관리번호
+mk_no | M          | number | 마커 관리번호
 
 

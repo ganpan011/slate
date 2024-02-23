@@ -389,7 +389,7 @@ GPS 근로자 GPS 위치 정보를 제공한다.
 
 `POST /imoa/api/monitor/4.1/workplace/{wp_no}/gps/user/{mb_no}`
 
-### Request Path
+### Path Variable
 
 항목 | 필수 여부(M/O) | 데이터 타입 | 설명
 --------- |------------| -----------| -----------

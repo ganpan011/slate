@@ -63,11 +63,14 @@ V0.5 | 2024-02-20 | 현장 메인(조감도) 내 표시 정보 조회 HTTP Reque
    - | -          | 공사 진행 현황 정보 조회 API 추가, GPS 근로자 검색 추가
 V0.6 | 2024-02-21 | IOT 장치(마커) 정보 내 state 및 상세 팝업을 위한 정보 추가. ( models 내 BleMarker > device_info 참고 )   
    - | -          | 진행현황바 정보 내 진행현황 수치 및 TBM 전/후방 cctv 정보 추가. ( models 내 BleProgressBar 참고 )
-
+V0.7 | 2024-02-23 | IOT 장치(마커) 의 BLE 위치 정보 조회 API 추가 ( Device 내 위치 정보 조회 참고 )
+   - | -          | BLE Mode 에서 CCTV Play 를 위한 CCTV 플로팅 팝업 관련 API 추가 ( BLE Monitor API 내 CCTV 플로팅 팝업 참고 ) 
+   - | -          | Marker 셋팅시 화면 설정을 위한 구성 정보에 해당 현장의 메인 컴포넌트 정보 ( 이름 및 height, width ) 추가
 
 
 ## 미구현 리스트
 
+1. QR 클릭시 당일 접근 이력 팝업을 위한 API 추가
 
 ## 인증 방식
 

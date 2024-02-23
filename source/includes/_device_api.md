@@ -118,3 +118,76 @@ device_type_category | M          | number | 디바이스 유형 카테고리. (
 device_id | M          | string | 디바이스 표시명
 mac_address  | M          | string | mac address
 
+
+## 디바이스(장치) BLE 위치 정보 조회
+
+> 응답 전문 예시
+
+```JSON
+{
+  "return_code": 0,
+  "return_message": "Success",
+  "context": {
+    "wp_no": 1,
+    "mk_no": 1,
+    "mk_type": 1,
+    "cstrt_no": 1,
+    "grid_x": 29.12,
+    "grid_y": 90.99,
+    "device_info": {
+      "idx": 1,
+      "display_name": "디바이스명",
+      "device_type": 1,
+      "device_type_name": "디바이스 유형명",
+      "mac_address": "Mac address"
+    }
+  }
+}
+```
+
+디바이스 ( IOT 장치 및 BLE G/W ) 의 BLE Mode 지정된 위치 정보를 조회합니다.
+
+컴포넌트 ( 화재감지기 ) 에 출력되는 디바이스 선택시 해당 BLE 화면으로 이동하기 위한 정보 조회를 위해 이용됩니다.
+
+<aside class="notice">
+사용자 인증 ( HTTP Bearer ) 필요 
+</aside>
+
+신규 API 구현. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20Device(%EC%9E%A5%EC%B9%98)%20API%20/bleLocationUsingGET)
+
+기존 API Deprecated ( 사용 불가 )
+
+1. BLE 스마트 안전모니터 디바이스 위치 검색 [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.1%5D%20IMOS%20%EC%9D%BC%EB%B0%98%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/searchDeviceLocationUsingGET)
+
+
+### HTTP Request
+
+`GET /imoa/api/monitor/4.3/workplace/{wp_no}/device/{idx}/location/ble`
+
+### Path variable
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------| -----------| -----------
+wp_no | M          | number | 현장 관리번호
+idx | M          | number | 디바이스 관리번호
+
+### Response Body
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------| -----------| -----------
+mk_no	 | M          | number  | 마커 관리번호
+mk_type	 | M          | number  | 마커 유형
+cstrt_no	 | M          | number  | 공사구간 관리번호
+grid_x	 | M          | decimal | 마커 위치 x 축 좌표
+grid_y | M          | decimal | 마커 위치 y 축 좌표
+device_info | M | Object | 디바이스 정보
+
+### device_info ( 디바이스 정보 )
+
+항목 | 필수 여부(M/O) | 데이터 타입  | 설명
+--------- |------------|---------| -----------
+idx | M          | number  | 디바이스(장치) 관리번호
+display_name | M          | string  | 디바이스 표시명
+device_type | M          | number  | 디바이스 유형
+device_type_name | M          | string  | 디바이스 유형명
+mac_address | M          | string  | mac 주소

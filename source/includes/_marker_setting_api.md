@@ -11,6 +11,10 @@
   "return_code": 0,
   "return_message": "Success",
   "context": {
+    "hcmpt_id": "I_MAIN",
+    "hcmpt_name": "메인화면",
+    "width": 3,
+    "height": 2,
     "construct_section_list": [
       {
         "cstrt_no": 1,
@@ -58,6 +62,10 @@ wp_no | M          | Number |현장 관리번호
 
 항목 | 필수 여부(M/O) | 데이터 타입           | 설명
 --------- |------------|------------------| -----------
+hcmpt_id | M          | string             | 현장의 메인 컴포넌트 아이디
+hcmpt_name | M          | string             | 현장의 메인 컴포넌트명
+width | M          | number             | 메인 컴포넌트 길이(1~4)
+height | M          | number             | 메인 컴포넌트 높이(1~3)
 construct_section_list | M          | List             | 공사구간 리스트
 registered_count | M          | Object           | 등록 센서수 정보
 registered_count.iot | M          | List             | 등록 IOT 센서 유형별 등록수 정보

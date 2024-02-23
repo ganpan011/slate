@@ -99,6 +99,11 @@ EMStone NVR 이용하는 CCTV Play 를 위한 정보를 제공합니다. ( conn_
 
 신규 API 구현. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20CCTV%20API%20/viewUsingGET) 
 
+<aside class="notice">
+BLE Mode 에서 CCTV Play 는 BLE Monitor API 내 CCTV 플로팅 팝업 관련 API 를 이용하여주세요.    
+</aside>
+
+
 ### HTTP Request
 
 `GET /imoa/api/monitor/4.3/workplace/{wp_no}/cctv/preview/nvr/{cctvNo}`

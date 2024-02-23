@@ -98,7 +98,7 @@ list | M | List<WorkplaceInfo> | 지원 가능 현장 리스트. 현장 정보 �
 
 `GET /imoa/api/workplace/manage/detail/{wp_id}`
 
-### Request Path
+### Path Variable
 
 항목 | 필수 여부(M/O) | 데이터 타입 | 설명
 --------- |------------| -----------| -----------
@@ -239,7 +239,7 @@ wp_id | M          | string | 현장 아이디
 
 `POST /imoa/api/monitor/4.2/workplace/{wp_no}/main`
 
-### Request Path
+### Path Variable
 
 항목 | 필수 여부(M/O) | 데이터 타입 | 설명
 --------- |------------| -----------| -----------
