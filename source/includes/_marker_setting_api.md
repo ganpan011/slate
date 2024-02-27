@@ -89,7 +89,7 @@ full_name | M          | string | 전체 공사구간명 ( 상위 공사구간�
 
 ## 공사 구간 마커 및 진행현황 구성 정보 조회
 
-> 응답 전문 예시.   [BleMarker](#blemarker)  및 [BleProgressBar](#bleprogressbar) 참고
+> 응답 전문 예시. 상세 정보는  [BleMarker](#blemarker)  및 [BleProgressBar](#bleprogressbar) 참고
 
 ```json
 {
@@ -106,6 +106,7 @@ full_name | M          | string | 전체 공사구간명 ( 상위 공사구간�
         "grid_y": 98.99,
         "label_text": "라벨 표시 텍스트",
         "lnk_cstrt_no": 1,
+        "actual_location": 1,
         "attached_target": 1,
         "ap_sensor_stat" : {
           "caution_count" : 3,
@@ -192,7 +193,6 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "grid_y": 98.99,
       "lnk_cstrt_no": 2,
       "label_text": "라벨 표시 텍스트",
-      "lnk_cstrt_no": 1,
       "option": {
       },
       "style": {
@@ -220,6 +220,7 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "grid_x": 10.12,
       "grid_y": 98.99,
       "ref_device_idx" : 14,
+      "actual_location" : 1,      
       "option": {
         "show_name" : 1        
       },
@@ -232,6 +233,7 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "grid_x": 10.12,
       "grid_y": 98.99,
       "ref_sensor_idx" : 14,
+      "actual_location" : 1,
       "option": {
         "show_name" : 1
       },
@@ -244,6 +246,7 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "grid_x": 10.12,
       "grid_y": 98.99,
       "ref_device_idx" : 14,
+      "actual_location" : 1,
       "option": {
         "show_icon" : 1,
         "auto_hide" : 1
@@ -259,6 +262,7 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "grid_x": 10.12,
       "grid_y": 98.99,
       "ref_qr_stk_no" : 14,
+      "actual_location" : 1,
       "option": {
         "show_name" : 1,
         "show_count" : 1
@@ -274,6 +278,7 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "grid_x": 10.12,
       "grid_y": 98.99,
       "ref_cctv_no" : 14,
+      "actual_location" : 1,
       "option": {
         "show_name" : 1
       },
@@ -291,10 +296,10 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
         "ref_cstrt_no" : 3,
         "tbm_front_cctv_no": 1,
         "tbm_back_cctv_no": 1,
+        "direction": 1,
+        "show_distance": 1,
+        "show_tbm": 1,
         "option": {
-          "direction": 1,
-          "show_distance": 1,
-          "show_tbm": 1
         },
         "style": {
           "height": "높이",

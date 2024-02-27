@@ -157,6 +157,7 @@ wr4 | M          | 협력사 번호
   "attached_target" : 1,
   "label_text" : "라벨 표시 텍스트",
   "lnk_cstrt_no" : 2,
+  "actual_location" : 1,
   "ap_sensor_stat" : {
     "caution_count" : 3,
     "danger_worker_count" : 1,
@@ -245,6 +246,7 @@ mk_name	 | M          | string  | 마커명
 grid_x	 | M          | decimal | 마커 위치 x 축 좌표  
 grid_y | M          | decimal | 마커 위치 y 축 좌표
 attached_target | M          | number  | 마커 부착 목표물. 1: 공사구간, 2: 진행현황바
+actual_location | M          | number  | 실제 위치 여부. 0: 아님 ( 표시 용도 ), 1: 실제 위치. IOT센서, AP센서, QR, CCTV 등 기기류의 실제 위치 지정 여부
 lnk_cstrt_no	 | O          | number  | 링크 공사구역 관리번호. 마커 유형이 라벨(1), 아이콘(2) 인 경우 사용
 label_text	 | O          | string  | 라벨 표시 텍스트. 마커 유형이 라벨(1) 인 경우 사용
 ap_sensor_stat| O          | object  | Ap 센서 감지 근로자 현황. 마커 유형이 라벨(1) 이고 링크된 공사구역이 있는 경우 사용. 설정화면에서는 미사용
@@ -415,10 +417,10 @@ icon_size | 아이콘 사이즈
         "cctv_kind" : 1,
         "install_type" : 1
       },
+      "direction": 1,
+      "show_distance": 1,
+      "show_tbm": 1,
       "option": {
-        "direction": 1,
-        "show_distance": 1,
-        "show_tbm": 1
       },
       "style": {
         "height": "높이",
@@ -444,12 +446,15 @@ items	 | M          | 진행현황 정보 리스트
 item_idx	 | M          | 진행현황 바 내 순번. 1부터 시작
 ref_cstrt_no | M          | 표시될 공사 구간 관리번호
 prg_info | M | 표시될 공사 구간의 진행현황 정보
-show_item	 | M          | 진행현황 표시 여부.  0: 표시하지 않음(blank item). 1: 진행형황 표시
+show_item	 | M          | 진행현황 표시 여부.  0: 표시하지 않음(blank item). 1: 진행현황 표시
 start_position	 | M          | 진행현황 바 내 시작 위치. 0 ~ 100.00
 tbm_front_cctv_no | M          | TBM 전방 CCTV 관리번호
 tbm_front_cctv_info | M          | TBM 전방 CCTV 정보 ( cctv_info 참고 )
 tbm_back_cctv_no | M          | TBM 후방 CCTV 관리번호
 tbm_back_cctv_info | M          | TBM 후방 CCTV 정보. ( cctv_info 참고 )
+direction | O | 공사방향. 1: 좌->우,  2: 우->좌 ( 진행현황 표시시 필수 )
+show_distance | O |  진행거리 표시 여부. 0: 표시 안함, 1: 표시함. ( 진행현황 표시시 필수 )
+show_tbm | O | TBM 표시 여부. 0: 표시 안함, 1: 표시함.  ( 진행현황 표시시 필수 )
 option | O          | 진행현황 아이템 옵션 설정 정보
 style | O          | 진행현황 아이템 style 설정 정보
 
@@ -465,14 +470,6 @@ progress_distance	 | M          | 진행 거리
 depth	 | M          | 심도
 
 
-#### 진행현황 아이템 옵션 설정 정보
-
-옵션 |  설명
---------- |------------
-direction | 공사방향. 1: 좌->우,  2: 우->좌
-show_distance | 진행거리 표시 여부
-show_tbm | TBM 표시 여부
-
 #### 진행현황 아이템 style 정보
 
 style명 |  설명
@@ -484,8 +481,3 @@ height | 좊이
 옵션과 style 은 자유롭게 추가/삭제하여도 무방합니다.
 
 
-
-
-## WpData
-
-// TODO

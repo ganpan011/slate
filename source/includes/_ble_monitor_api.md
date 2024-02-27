@@ -232,10 +232,10 @@ BLE mode 화면 표시를 위한 구성 정보 조회 API 입니다.
             "cctv_kind" : 1,
             "install_type" : 1
           },
+          "direction": 1,
+          "show_distance": 1,
+          "show_tbm": 1,
           "option": {
-            "direction": 1,
-            "show_distance": 1,
-            "show_tbm": 1
           },
           "style": {
             "height": "높이",

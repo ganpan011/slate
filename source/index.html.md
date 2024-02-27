@@ -22,6 +22,7 @@ includes:
   - icon_api
   - models
   - websocket_event 
+  - etc_reference
 
 
 search: false
@@ -47,15 +48,15 @@ V0.2 | 2024-02-14 | 진행현황 바 정보 변경 ( pgrbar_no -> bar_no, bar_id
    - | -          | 공사 구간 마커 및 진행현황 구성 정보 조회/저장 구현 및 Swagger 추가 ( URL 변경 )
    - | -          | 기존 API 여부 및 미구현 여부 추가
    - | -          | 공사 구간 및 현황 API 섹션 분리 추가
-V0.3 | 2024-02-15 | QR Sticker 리스트 및 정보 조회 구현. ( API 변경 )
-   - | -          | AP Sensor 리스트 및 정보 조회 구현. ( API 변경 )
-   - | -          | 디바이스 리스트 및 정보 조회 구현. ( API 변경 )
-   - | -          | CCTV 리스트 및 정보 조회 구현. ( API 변경 )
-   - | -          | 공사 현황 정보 리스트 조회 및 수정 구현 ( API 변경 )
-V0.4 | 2024-02-19 | 현장 GPS 내 표시 fence 및 주요지점 정보 조회 구현 ( API 변경 )
+V0.3 | 2024-02-15 | QR Sticker 리스트 및 정보 조회 구현. < API 변경 >
+   - | -          | AP Sensor 리스트 및 정보 조회 구현. < API 변경 >
+   - | -          | 디바이스 리스트 및 정보 조회 구현. < API 변경 >
+   - | -          | CCTV 리스트 및 정보 조회 구현. < API 변경 >
+   - | -          | 공사 현황 정보 리스트 조회 및 수정 구현 < API 변경 >
+V0.4 | 2024-02-19 | 현장 GPS 내 표시 fence 및 주요지점 정보 조회 구현 < API 변경 >
    - | -          | 마커 아이콘 리스트 조회 API 추가 ( 신규 추가 )
-   - | -          | BLE mode 화면 표시를 위한 구성 정보 조회 API 추가 ( API 변경 )
-   - | -          | AP 센서 감지 근로자 검색 및 위치 조회 API 추가 ( API 변경 )
+   - | -          | BLE mode 화면 표시를 위한 구성 정보 조회 API 추가 < API 변경 >
+   - | -          | AP 센서 감지 근로자 검색 및 위치 조회 API 추가 < API 변경 >
    - | -          | Model 내 마커 정보 상세 변경
 V0.5 | 2024-02-20 | 현장 메인(조감도) 내 표시 정보 조회 HTTP Request URL 오류 수정 ( /ble -> /ble/main )
    - | -          | 현장 GPS 내 표시 fence 및 주요지점 정보 조회 HTTP Request method 오류 수정 ( POST -> GET )
@@ -67,11 +68,14 @@ V0.7 | 2024-02-23 | IOT 장치(마커) 의 BLE 위치 정보 조회 API 추가 (
    - | -          | BLE Mode 에서 CCTV Play 를 위한 CCTV 플로팅 팝업 관련 API 추가 ( BLE Monitor API 내 CCTV 플로팅 팝업 참고 ) 
    - | -          | Marker 셋팅시 화면 설정을 위한 구성 정보에 해당 현장의 메인 컴포넌트 정보 ( 이름 및 height, width ) 추가
 V0.8 | 2024-02-26 | QR 당일 이력 조회 팝업을 위한 API 추가
+V0.9 | 2024-02-27 | 개발 관련 참고사항 항목 추가
+   - | -          | 마커 ( IOT 센서 및 AP 센서, BLE GW, QR, CCTV ) 정보 저장시 실제 위치 여부(actual_location) 추가. < API 변경 >
+   - | -          | 진행현황바 정보 저장 및 조회시 option (direction,show_distance,show_tbm ) 사항을 현황바 아이템 정보로 변경. < API 변경 >
 
 
 ## 미구현 리스트
 
-1. QR 클릭시 당일 접근 이력 팝업을 위한 API 추가
+
 
 ## 인증 방식
 
