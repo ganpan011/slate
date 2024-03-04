@@ -1,4 +1,4 @@
-# CCTV
+# CCTV API
 
 CCTV 검색, CCTV Play 를 위한 필요 정보 API 를 제공합니다.
 

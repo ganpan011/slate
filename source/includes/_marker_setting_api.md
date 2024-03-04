@@ -128,7 +128,7 @@ full_name | M          | string | 전체 공사구간명 ( 상위 공사구간�
         {
           "bar_no": 1,
           "item_idx": 1,
-          "show_item": 1,
+          "blank_item": 0,
           "start_position": 22.22,
           "ref_cstrt_no": 3,
           "prg_info": {
@@ -291,7 +291,7 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
     "items": [
       {
         "item_idx": 1,
-        "show_item": 1,
+        "blank_item": 0,
         "start_position": 1,
         "ref_cstrt_no" : 3,
         "tbm_front_cctv_no": 1,

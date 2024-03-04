@@ -403,7 +403,7 @@ icon_size | 아이콘 사이즈
     {
       "bar_no": 1,
       "item_idx": 1,
-      "show_item": 1,
+      "blank_item": 0,
       "start_position": 22.22,
       "ref_cstrt_no" : 3,
       "prg_info" : {
@@ -456,7 +456,7 @@ items	 | M          | 진행현황 정보 리스트
 item_idx	 | M          | 진행현황 바 내 순번. 1부터 시작
 ref_cstrt_no | M          | 표시될 공사 구간 관리번호
 prg_info | M | 표시될 공사 구간의 진행현황 정보
-show_item	 | M          | 진행현황 표시 여부.  0: 표시하지 않음(blank item). 1: 진행현황 표시
+blank_item	 | M          | 비어있는 구간(Blank Item) 여부. 0: 아님, 1: Blank item
 start_position	 | M          | 진행현황 바 내 시작 위치. 0 ~ 100.00
 tbm_front_cctv_no | M          | TBM 전방 CCTV 관리번호
 tbm_front_cctv_info | M          | TBM 전방 CCTV 정보 ( cctv_info 참고 )
