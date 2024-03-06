@@ -69,7 +69,7 @@ construct_in_progress | O          | 공사 진행정보 존재 유무. 값 없�
 --------- |------------| -----------
 cstrt_no | M          | 공사구간 관리번호
 cstrt_name | M          | 공사구간명
-full_name | M          | 공사구간 전체명 ( 상위 공사구간이 있을 경우 상위공사구간명 + '/' + 공사구간명 )
+full_name | M          | 공사구간 full 명 ( 상위 공사구간이 있을 경우 상위공사구간명 + '/' + 공사구간명 )
 construct_distance | O          | 총 공사거리(단위는 m)
 progress_distance | O          | 진행거리(단위는 m)
 depth | O          | 심도(단위는 m)
@@ -129,7 +129,7 @@ total_construct_distance | M          | 전체 공사거리(단위는 m)
 total_progress_distance | M          | 전체 진행거리(단위는 m)
 list.cstrt_no | M          | 공사구간 관리번호
 list.cstrt_name | M          | 공사구간명
-list.full_name | M          | 공사구간 전체명 ( 상위 공사구간이 있을 경우 상위공사구간명 + '/' + 공사구간명 )
+list.full_name | M          | 공사구간 full 명 ( 상위 공사구간이 있을 경우 상위공사구간명 + '/' + 공사구간명 )
 list.construct_distance | M          | 총 공사거리(단위는 m)
 list.progress_distance | M          | 진행거리(단위는 m)
 list.depth | O          | 심도(단위는 m)
@@ -181,7 +181,7 @@ cstrt_no | M          | 공사구간 관리번호
 --------- |------------| -----------
 cstrt_no | M          | 공사구간 관리번호
 cstrt_name | M          | 공사구간명
-full_name | M          | 공사구간 전체명 ( 상위 공사구간이 있을 경우 상위공사구간명 + '/' + 공사구간명 )
+full_name | M          | 공사구간 full 명 ( 상위 공사구간이 있을 경우 상위공사구간명 + '/' + 공사구간명 )
 construct_distance | M          | 총 공사거리(단위는 m)
 progress_distance | M          | 진행거리(단위는 m)
 depth | O          | 심도(단위는 m)

@@ -12,7 +12,9 @@ BLE mode 화면 표시를 위한 구성 정보 조회 API 입니다.
 {
   "context": {
     "cstrt_no": 1,
-    "cstrt_name": "상단",
+    "cstrt_name": "공사구간명",
+    "full_name": "상위명 / 공사구간명",
+    "up_cstrt_no": 2,
     "image_url": "공사 구간 이미지 URL",
     "marker_list": [
       {  
@@ -170,7 +172,8 @@ BLE mode 화면 표시를 위한 구성 정보 조회 API 입니다.
           "qr_stk_no" : 14,
           "qr_stk_name" : "qr sticker 명",
           "qr_type" : 1,
-          "inout_type" : 1
+          "inout_type" : 1,
+          "inout_count" : 12
         },
         "option": {
           "show_name" : 1,
@@ -283,9 +286,11 @@ marker_mb_no | O          | number | AP 센서 디텍딩 마킹대상 근로자 
 --------- |------------|-----------------| -----------
 cstrt_no | M          | number          | 공사구간 관리번호
 cstrt_name | M          | string          | 공사구간명
+full_name | M          | string          | 공사구간 full 명 ( 상위 공사구간이 있을 경우 상위공사구간명 + '/' + 공사구간명 ) 
+up_cstrt_no | M          | number          | 상위 이동을 위한 상위 공사구간 관리번호 
 image_url | M          | string          | 공사구간 이미지 URL
 marker_list | O          | List<BleMarker> | 표시될 마커 리스트.  [BleMarker](#blemarker)
-progressbar | O          | BleProgressBar | 공사 진행 현황 정보. [BleProgressBar](#bleprogressbar)
+progressbar | O          | BleProgressBar  | 공사 진행 현황 정보. [BleProgressBar](#bleprogressbar)
 
 
 ## 현장 메인(조감도) 내 표시 정보 조회 ( 현장 관리번호 기반 )

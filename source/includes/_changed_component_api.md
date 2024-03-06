@@ -53,7 +53,7 @@ API 교체
 --------- |------------|--------| -----------
 total_cnt | M          | number | 전체 수
 status_list.cstrt_no | M          | number |  공사구간 관리번호
-status_list.full_name | M          | string |  공사구간 full nane
+status_list.full_name | M          | string          | 공사구간 full 명 ( 상위 공사구간이 있을 경우 상위공사구간명 + '/' + 공사구간명 )
 status_list.cnt | M          | string | 감지수
 
 

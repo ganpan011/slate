@@ -348,6 +348,7 @@ qr_stk_no | M          | number | QR 스티커 관리번호
 qr_stk_name | M          | string | QR 스티커명
 qr_type | M          | number | QR 스티커 유형. 1: 출/퇴근, 2: 진/출입
 inout_type | M          | number | 진/출입유형. 1: 진입, 2: 진출, 3: 진/출입 선택
+inout_count | O | number | 당일 진/출입 수
 
 ### cctv_info ( CCTV 정보 )
 
