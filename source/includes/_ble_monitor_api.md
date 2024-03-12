@@ -3,7 +3,7 @@
 BLE mode 화면 표시를 위한 구성 정보 조회 API 입니다.
 
 
-## 현장 공사구간 내 표시 정보 조회
+## 현장 공사구간 내 표시 정보 조회 ( 공사구간 관리번호 이용 )
 
 
 > 전체 응답 전문 예시. [BleMarker](#blemarker)  및 [BleProgressBar](#bleprogressbar) 참고
@@ -293,9 +293,9 @@ marker_list | O          | List<BleMarker> | 표시될 마커 리스트.  [BleMa
 progressbar | O          | BleProgressBar  | 공사 진행 현황 정보. [BleProgressBar](#bleprogressbar)
 
 
-## 현장 메인(조감도) 내 표시 정보 조회 ( 현장 관리번호 기반 )
+## 현장 최상위 공사구간 내 표시 정보 조회 ( 현장 관리번호 기반 )
 
-현장 관리번호 기반 현장 메인 영역(조감도)에 표시될 마커 및 공사 진행현황바 정보를 제공한다.
+현장 관리번호 기반으로 현장 내 최상위 공사구간에 표시될 마커 및 공사 진행현황바 정보를 제공한다.
 
 <aside class="notice">
 사용자 인증 ( HTTP Bearer ) 필요 
@@ -329,86 +329,6 @@ marker_mb_no | O          | number | AP 센서 디텍딩 마킹대상 근로자 
 ### Response Body
 
 현장 공사구간 내 표시 정보 조회 결과와 동일
-
-
-## 현장 빌딩(단면도/구획도) 내 표시 정보 조회 ( 빌딩 관리번호 기반 )
-
-빌딩 관리번호를 이용한 현장 공사구간 내 표시 정보 조회 제공. 불가피한 경우 사용
-
-
-<aside class="notice">
-사용자 인증 ( HTTP Bearer ) 필요 
-</aside>
-
-신규 API 구현. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20BLE%20Mode%20API%20/constructSiteCoordinateByBuildingUsingGET_1)
-
-기존 API Deprecated ( 사용 불가 )
-
-1. BLE (단면도) Monitoring Data 검색 [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.1%5D%20IMOS%20%EC%9D%BC%EB%B0%98%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/workplaceBleBuildingMonitoringDataUsingGET)
-
-### HTTP Request
-
-`POST /imoa/api/monitor/4.3/workplace/{wp_no}/ble/old/{building_no}`
-
-
-### Path variable
-
-항목 | 필수 여부(M/O) | 데이터 타입          | 설명
---------- |------------|-----------------| -----------
-wp_no | M          | number | 현장 관리번호
-building_no | M          | number | 빌딩 관리번호
-
-
-### Request Parameter
-
-항목 | 필수 여부(M/O) | 데이터 타입 | 설명설명
---------- |------------|--------| -----------
-marker_mb_no | O          | number | AP 센서 디텍딩 마킹대상 근로자 관리번호
-
-### Response Body
-
-현장 공사구간 내 표시 정보 조회 결과와 동일
-
-
-## 현장 층(평면도) 내 표시 정보 조회 ( 층 관리번호 기반 )
-
-층 관리번호를 이용한 현장 공사구간 내 표시 정보 조회 제공. 불가피한 경우 사용
-
-<aside class="notice">
-사용자 인증 ( HTTP Bearer ) 필요 
-</aside>
-
-신규 API 구현. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20BLE%20Mode%20API%20/constructSiteCoordinateByBuildingUsingGET_1)
-
-기존 API Deprecated ( 사용 불가 )
- 
-1. BLE (평면도) Monitoring Data 검색 [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.1%5D%20IMOS%20%EC%9D%BC%EB%B0%98%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EA%B4%80%EB%A6%AC/workplaceBleBuildingFloorMonitoringDataUsingGET)
-
-
-### HTTP Request
-
-`POST /imoa/api/monitor/4.3/workplace/{wp_no}/ble/old/{building_no}/{floor}`
-
-
-### Path variable
-
-항목 | 필수 여부(M/O) | 데이터 타입          | 설명
---------- |------------|-----------------| -----------
-wp_no | M          | number | 현장 관리번호
-building_no | M          | number | 빌딩 관리번호
-floor | M          | number | 층번호
-
-### Request Parameter
-
-항목 | 필수 여부(M/O) | 데이터 타입 | 설명설명
---------- |------------|--------| -----------
-marker_mb_no | O          | number | AP 센서 디텍딩 마킹대상 근로자 관리번호
-
-
-### Response Body
-
-현장 공사구간 내 표시 정보 조회 결과와 동일
-
 
 
 
