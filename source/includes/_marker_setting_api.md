@@ -191,6 +191,8 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "mk_type": 1,
       "grid_x": 10.12,
       "grid_y": 98.99,
+      "attached_target" : 1,
+      "actual_location" : 1,
       "lnk_cstrt_no": 2,
       "label_text": "라벨 표시 텍스트",
       "option": {
@@ -206,6 +208,8 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "mk_type": 2,
       "grid_x": 10.12,
       "grid_y": 98.99,
+      "attached_target" : 1,
+      "actual_location" : 1,
       "lnk_cstrt_no": 3,
       "icon_type" : 1,
       "option": {
@@ -219,8 +223,9 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "mk_type": 3,
       "grid_x": 10.12,
       "grid_y": 98.99,
+      "attached_target" : 1,
+      "actual_location" : 1,
       "ref_device_idx" : 14,
-      "actual_location" : 1,      
       "option": {
         "show_name" : 1        
       },
@@ -232,8 +237,9 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "mk_type": 4,
       "grid_x": 10.12,
       "grid_y": 98.99,
-      "ref_sensor_idx" : 14,
+      "attached_target" : 1,
       "actual_location" : 1,
+      "ref_sensor_idx" : 14,
       "option": {
         "show_name" : 1
       },
@@ -245,8 +251,9 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "mk_type": 5,
       "grid_x": 10.12,
       "grid_y": 98.99,
-      "ref_device_idx" : 14,
+      "attached_target" : 1,
       "actual_location" : 1,
+      "ref_device_idx" : 14,
       "option": {
         "show_icon" : 1,
         "auto_hide" : 1
@@ -261,8 +268,9 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "mk_type": 6,
       "grid_x": 10.12,
       "grid_y": 98.99,
-      "ref_qr_stk_no" : 14,
+      "attached_target" : 1,
       "actual_location" : 1,
+      "ref_qr_stk_no" : 14,
       "option": {
         "show_name" : 1,
         "show_count" : 1
@@ -277,8 +285,9 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "mk_type": 7,
       "grid_x": 10.12,
       "grid_y": 98.99,
-      "ref_cctv_no" : 14,
+      "attached_target" : 1,
       "actual_location" : 1,
+      "ref_cctv_no" : 14,
       "option": {
         "show_name" : 1
       },

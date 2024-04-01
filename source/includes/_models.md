@@ -165,9 +165,9 @@ wr4 | M          | 협력사 번호
   "grid_x" : 10.12,
   "grid_y" : 98.99,
   "attached_target" : 1,
+  "actual_location" : 1,
   "label_text" : "라벨 표시 텍스트",
   "lnk_cstrt_no" : 2,
-  "actual_location" : 1,
   "ap_sensor_stat" : {
     "caution_count" : 3,
     "danger_worker_count" : 1,
@@ -254,8 +254,8 @@ wr4 | M          | 협력사 번호
 mk_no	 | M          | number  | 마커 관리번호
 mk_type	 | M          | number  | 마커 유형 
 mk_name	 | M          | string  | 마커명
-grid_x	 | M          | decimal | 마커 위치 x 축 좌표  
-grid_y | M          | decimal | 마커 위치 y 축 좌표
+grid_x	 | M          | decimal | 마커 위치 x 축 좌표 ( 0.00 ~ 100.00. x 축 좌표 내  % 값을 이용 )  
+grid_y | M          | decimal | 마커 위치 y 축 좌표 ( 0.00 ~ 100.00. y 축 좌표 내  % 값을 이용 )
 attached_target | M          | number  | 마커 부착 목표물. 1: 공사구간, 2: 진행현황바
 actual_location | M          | number  | 실제 위치 여부. 0: 아님 ( 표시 용도 ), 1: 실제 위치. IOT센서, AP센서, QR, CCTV 등 기기류의 실제 위치 지정 여부
 lnk_cstrt_no	 | O          | number  | 링크 공사구역 관리번호. 마커 유형이 라벨(1), 아이콘(2) 인 경우 사용
