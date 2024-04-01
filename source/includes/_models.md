@@ -228,7 +228,8 @@ wr4 | M          | 협력사 번호
     "cctv_no" : 14,
     "cctv_name" : "CCTV명",
     "cctv_kind" : 1,
-    "install_type" : 1
+    "install_type" : 1,
+    "ptz_status" : 1
   },
   "option" : {
     "show_name" : 1,
@@ -358,6 +359,7 @@ cctv_no | M          | number  | CCTV 관리번호
 cctv_name | M          | string | CCTV명                                        
 cctv_kind | M          | number | CCTV 유형. 0: 일반, 1: IntelliVix, 2: Emstone    
 install_type | M          | number | 설치 유형. 0: 고정형, 1: 이동형
+ptz_status | M          | number | PTZ 지원 여부. 0: 미지원, 1: 지원
 
 #### 마커 유형
 
@@ -458,14 +460,16 @@ icon_size | 아이콘 사이즈
         "cctv_no" : 14,
         "cctv_name" : "CCTV명",
         "cctv_kind" : 1,
-        "install_type" : 1
+        "install_type" : 1,
+        "ptz_status" : 1
       },
       "tbm_back_cctv_no": 1,
       "tbm_back_cctv_info" : {
         "cctv_no" : 14,
         "cctv_name" : "CCTV명",
         "cctv_kind" : 1,
-        "install_type" : 1
+        "install_type" : 1,
+        "ptz_status": 1
       },
       "direction": 1,
       "show_distance": 1,

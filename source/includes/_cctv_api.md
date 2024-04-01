@@ -73,6 +73,7 @@ cctv_kind | M          | number | CCTV 유형. 0: 일반, 1: IntelliVix, 2: Emst
 cctv_url | M          | string | CCTV 연동을 위한 URL. ( MJPEG 방식 플레이 필요 정보 )      
 conn_type | M          | string | CCTV 연동 방식                                   
 install_type | M          | number | 설치 유형. 0: 고정형, 1: 이동형                        
+ptz_status | M          | number | PTZ 지원 여부. 0: 미지원, 1: 지원
 
 
 ## CCTV Play 를 위한 정보 조회 ( NVR 방식 )
