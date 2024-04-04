@@ -187,7 +187,7 @@ wr4 | M          | 협력사 번호
     "device_type" : 14,
     "device_type_name" : "디바이스 유형명",
     "mac_address" : "Mac address",
-    "status": 1,
+    "rct_status": 1,
     "dv_status": 1,
     "state": 1,
     "state_name": "장치 상태명",
@@ -297,9 +297,9 @@ idx | M          | number  | 디바이스(장치) 관리번호
 display_name | M          | string  | 디바이스 표시명
 device_type | M          | number  | 디바이스 유형
 device_type_name | M          | string  | 디바이스 유형명
-status | M          | number  | 디바이스 측정치 상태. 디바이스 유형별로 상이
+rct_status | M          | number  | 디바이스 데이터 위험 상태. 1: 정상, 2: 주의 , 3: 위험
 dv_status | M          | number  | 디바이스 동작 상태. 1: 정상, 2:OFF, 3: 측정불가, 4: 수집 지연
-state | M          | number  | 디바이스 상태. 1: 정상, 2: 위험, 3:OFF, 4: 측정불가, 5: 수집 지연
+state | M          | number  | 디바이스 상태. 1: 정상, 2: 주의, 3: 위험, 4:OFF, 5: 측정불가, 6: 수집 지연
 state_name | M          | string  | 디바이스 상태명
 show_popup | M          | boolean | 디바이스 상세 팝업 지원 유무
 popup_display_items | M          | List   | 상세 팝업 표시 데이터 항목
