@@ -26,7 +26,8 @@
       "full_name": "암센터/상단",
       "construct_distance" : 1444,
       "progress_distance" : 185,
-      "depth" : 3.984
+      "depth" : 3.984,
+      "rep_color" : "#123456"
     }
   ]
 }
@@ -73,6 +74,7 @@ full_name | M          | 공사구간 full 명 ( 상위 공사구간이 있을 �
 construct_distance | O          | 총 공사거리(단위는 m)
 progress_distance | O          | 진행거리(단위는 m)
 depth | O          | 심도(단위는 m)
+rep_color | O          | 대표 색상 ( RGB 색상 혹은 색상명 )
 
 
 
@@ -95,7 +97,8 @@ depth | O          | 심도(단위는 m)
         "full_name": "암센터/상단",
         "construct_distance" : 1444,
         "progress_distance" : 185,
-        "depth" : 3.984
+        "depth" : 3.984,
+        "rep_color" : "#123456"
       }
     ]
   }
@@ -133,6 +136,7 @@ list.full_name | M          | 공사구간 full 명 ( 상위 공사구간이 있
 list.construct_distance | M          | 총 공사거리(단위는 m)
 list.progress_distance | M          | 진행거리(단위는 m)
 list.depth | O          | 심도(단위는 m)
+list.rep_color | O          | 대표 색상 ( RGB 색상 혹은 색상명 )
 
 
 
@@ -150,7 +154,8 @@ list.depth | O          | 심도(단위는 m)
     "full_name": "공사구간 전체명",
     "construct_distance": 1080,
     "progress_distance": 81,
-    "depth": 80.230
+    "depth": 80.230,
+    "rep_color" : "#123456"
   }
 }
 ```
@@ -185,6 +190,7 @@ full_name | M          | 공사구간 full 명 ( 상위 공사구간이 있을 �
 construct_distance | M          | 총 공사거리(단위는 m)
 progress_distance | M          | 진행거리(단위는 m)
 depth | O          | 심도(단위는 m)
+rep_color | O          | 대표 색상 ( RGB 색상 혹은 색상명 )
 
 
 ## 공사현황 정보 수정

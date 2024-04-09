@@ -20,6 +20,7 @@ includes:
   - ap_sensor_api
   - qrsticker_api
   - icon_api
+  - push_api 
   - changed_component_api
   - models
   - websocket_event 
@@ -92,7 +93,7 @@ V0.96 | 2024-04-01 | CCTV 정보 내 PTZ 지원여부 추가 ( ptz_status )
     - | -          | 마커 정보 저장시 요청 전문 예시 내 attached_target 과 actual_location 추가. 
     - | -          | Model 내 마커 위치 정보 grid_x 및 grid_y 값 설명 추가 ( 0.00 ~ 100.00 사이 % 값을 이용 )
 V0.97 | 2024-04-04 | 디바이스 장치의 위험상태 필드변경 ( status -> rct_status), 최종 상태 코드 변경
-
+V0.98 | 2024-04-09 | 사용자 Push API 추가 및 공사 진행 현황 대표색상 필드 추가 
 
 
 ## 리뉴얼로 인해 API 변경이 필요한 사항 ( 기존 컴포넌트 UI 변경 필요 ) 
