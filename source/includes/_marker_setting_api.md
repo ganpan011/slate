@@ -131,7 +131,7 @@ full_name | M          | string          | 공사구간 full 명 ( 상위 공사
           "blank_item": 0,
           "start_position": 22.22,
           "ref_cstrt_no": 3,
-          "prg_info": {
+          "pgr_info": {
             "cstrt_no": 3,
             "cstrt_name": "공사구간명",
             "construct_distance": 3212,

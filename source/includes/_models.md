@@ -448,7 +448,7 @@ icon_size | 아이콘 사이즈
       "blank_item": 0,
       "start_position": 22.22,
       "ref_cstrt_no" : 3,
-      "prg_info" : {
+      "pgr_info" : {
         "cstrt_no" : 3,
         "cstrt_name" : "공사구간명",
         "construct_distance" : 3212,
@@ -499,7 +499,7 @@ items	 | M          | 진행현황 정보 리스트
 --------- |------------| -----------
 item_idx	 | M          | 진행현황 바 내 순번. 1부터 시작
 ref_cstrt_no | M          | 표시될 공사 구간 관리번호
-prg_info | M | 표시될 공사 구간의 진행현황 정보
+pgr_info | M | 표시될 공사 구간의 진행현황 정보
 blank_item	 | M          | 비어있는 구간(Blank Item) 여부. 0: 아님, 1: Blank item
 start_position	 | M          | 진행현황 바 내 시작 위치. 0 ~ 100.00
 tbm_front_cctv_no | M          | TBM 전방 CCTV 관리번호
@@ -513,7 +513,7 @@ option | O          | 진행현황 아이템 옵션 설정 정보
 style | O          | 진행현황 아이템 style 설정 정보
 
 
-#### prg_info ( 진행 현황 ) 정보
+#### pgr_info ( 진행 현황 ) 정보
 
 항목 | 필수 여부(M/O) | 설명
 --------- |------------| -----------
