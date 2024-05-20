@@ -189,6 +189,7 @@ wr4 | M          | 협력사 번호
     "mac_address" : "Mac address",
     "rct_status": 1,
     "dv_status": 1,
+    "worker_count" : 0,
     "state": 1,
     "state_name": "장치 상태명",
     "show_popup": true,
@@ -266,6 +267,7 @@ icon_info | O          | object  | 아이콘 정보. 마커 유형이 아이콘(
 ref_device_idx | O          | number  | 디바이스 관리번호. 마커 유형이 IOT센서(3), BLE GW(5) 인 경우 사용
 device_info | O          | object  | 디바이스 정보. 마커 유형이 IOT센서(3), BLE GW(5) 인 경우 사용
 ref_sensor_idx | O          | number  | AP 센서 관리번호. 마커 유형이 AP센서(4) 인 경우 사용
+ap_sensor_info | O          | object  | AP 센서 정보 및 디텍팅 근로자 수 정보. 마커 유형이 AP센서(4) 인 경우 사용
 ref_qr_stk_no | O          | number  | 진출/입 QR 관리번호. 마커 유형이 QR(6) 인 경우 사용
 ref_cctv_no | O          | number  | CCTV 관리번호. 마커 유형이 CCTV(7) 인 경우 사용
 option | O          | object  | 마커 옵션 설정 정보
@@ -306,7 +308,7 @@ popup_display_items | M          | List   | 상세 팝업 표시 데이터 항�
 popup_display_items.code | M          | List   | 항목 코드
 popup_display_items.name | M          | List   | 항목명
 popup_display_items.value | M          | List   | 항목값
-
+worker_count	 | O          | number  | 근로자 감지수
 
 show_popup 이 true 인 경우 해당 디바이스 마커 클릭시 팝업 노출 
 

@@ -77,6 +77,7 @@ BLE mode 화면 표시를 위한 구성 정보 조회 API 입니다.
           "dv_status": 1,
           "state": 1,
           "state_name": "장치 상태명",
+          "worker_count": 0,
           "show_popup": true,
           "popup_display_items": [
             {
