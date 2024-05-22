@@ -251,7 +251,7 @@ precipitation_form | M          | string | 강수형태 코드
 precipitation_form_name | M          | string | 강수형태명
 rainfall | M          | string | 강수확률
 rainfall_unit | M          | string | 강수확률 단위
-sky_form | M          | string | 하늘형태 코드
+sky_form | M          | string | 하늘형태 코드 (  1 : 맑음, 2 : 구름조금, 3 : 구름많음, 4 : 흐림 )
 sky_form_name | M          | string | 하늘형태명
 temperature | M          | string | 온도
 temperature_unit | M          | string | 온도 단위
@@ -259,7 +259,6 @@ wind_direction	 | M          | string | 풍향
 wind_speed | M          | string | 풍속
 wind_speed_unit | M          | string | 풍속 단위
 temperature | M          | string | 온도
-
 
 #### UI 컴포넌트 정보
 
