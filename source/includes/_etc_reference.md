@@ -16,4 +16,6 @@
  - "도움말" LINK (개발기) : https://cnt.hulandev.co.kr/static/manual/sm_manual.pdf
  - "도움말" LINK (상용) : https://cnt.hulan.co.kr/static/manual/sm_manual.pdf
 
-
+* CCTV PTZ 지원
+ - https://www.emstone.com/docs/dvr/http/ptz.html  참고
+ - NVRV 유형의 CCTV 는 PTZ 를 지원하지 않음 
