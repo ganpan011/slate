@@ -133,6 +133,7 @@ minor | M          | number | AP 센서 minor
   "context" : [{
     "wp_no" : 1,
     "wp_name" : "string",
+    "mk_no" : 1,
     "cstrt_no" : 1,
     "cstrt_name" : "string",
     "coop_no" : 1,
@@ -187,6 +188,7 @@ search_value | O          | string | 검색값 ( 근로자명 )
 --------- |------------|--------| -----------
 wp_no | M          | number | 현장 관리번호
 wp_name | M          | string | 현장명
+mk_no | M          | number | 마커 관리번호
 cstrt_no | M          | number | 공사구간 관리번호
 cstrt_name | M          | string | 공사구간명
 full_Name | M          | string | 공사구간 fullname
@@ -217,6 +219,7 @@ slr_datetime | O          | number | 센서 접근 시간
   "context" : [{
     "wp_no" : 1,
     "wp_name" : "string",
+    "mk_no" : 1,
     "cstrt_no" : 1,
     "cstrt_name" : "string",
     "full_Name" :  "string",
@@ -278,6 +281,7 @@ AP 센서 감지 근로자 항목 참고
   "context" : {
     "wp_no" : 1,
     "wp_name" : "string",
+    "mk_no" : 1,
     "cstrt_no" : 1,
     "cstrt_name" : "string",
     "coop_no" : 1,
