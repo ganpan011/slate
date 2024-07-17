@@ -167,6 +167,7 @@ wr4 | M          | 협력사 번호
   "attached_target" : 1,
   "actual_location" : 1,
   "label_text" : "라벨 표시 텍스트",
+  "lnk_url": "외부 링크 URL",
   "lnk_cstrt_no" : 2,
   "ap_sensor_stat" : {
     "caution_count" : 3,
@@ -250,28 +251,29 @@ wr4 | M          | 협력사 번호
 
 ### 마커 정보
 
-항목 | 필수 여부(M/O) | 데이터 타입  | 설명
---------- |------------|---------| -----------
-mk_no	 | M          | number  | 마커 관리번호
-mk_type	 | M          | number  | 마커 유형 
-mk_name	 | M          | string  | 마커명
-grid_x	 | M          | decimal | 마커 위치 x 축 좌표 ( 0.00 ~ 100.00. x 축 좌표 내  % 값을 이용 )  
-grid_y | M          | decimal | 마커 위치 y 축 좌표 ( 0.00 ~ 100.00. y 축 좌표 내  % 값을 이용 )
-attached_target | M          | number  | 마커 부착 목표물. 1: 공사구간, 2: 진행현황바
-actual_location | M          | number  | 실제 위치 여부. 0: 아님 ( 표시 용도 ), 1: 실제 위치. IOT센서, AP센서, QR, CCTV 등 기기류의 실제 위치 지정 여부
-lnk_cstrt_no	 | O          | number  | 링크 공사구역 관리번호. 마커 유형이 라벨(1), 아이콘(2) 인 경우 사용
-label_text	 | O          | string  | 라벨 표시 텍스트. 마커 유형이 라벨(1) 인 경우 사용
-ap_sensor_stat| O          | object  | Ap 센서 감지 근로자 현황. 마커 유형이 라벨(1) 이고 링크된 공사구역이 있는 경우 사용. 설정화면에서는 미사용
-icon_type	 | O          | number  | 아이콘 유형. 마커 유형이 아이콘(2) 인 경우 사용
-icon_info | O          | object  | 아이콘 정보. 마커 유형이 아이콘(2) 인 경우 사용
-ref_device_idx | O          | number  | 디바이스 관리번호. 마커 유형이 IOT센서(3), BLE GW(5) 인 경우 사용
-device_info | O          | object  | 디바이스 정보. 마커 유형이 IOT센서(3), BLE GW(5) 인 경우 사용
-ref_sensor_idx | O          | number  | AP 센서 관리번호. 마커 유형이 AP센서(4) 인 경우 사용
-ap_sensor_info | O          | object  | AP 센서 정보 및 디텍팅 근로자 수 정보. 마커 유형이 AP센서(4) 인 경우 사용
-ref_qr_stk_no | O          | number  | 진출/입 QR 관리번호. 마커 유형이 QR(6) 인 경우 사용
-ref_cctv_no | O          | number  | CCTV 관리번호. 마커 유형이 CCTV(7) 인 경우 사용
-option | O          | object  | 마커 옵션 설정 정보
-style | O          | object  | 마커 style 설정 정보
+항목 | 필수 여부(M/O) | 데이터 타입    | 설명
+--------- |------------|-----------| -----------
+mk_no	 | M          | number    | 마커 관리번호
+mk_type	 | M          | number    | 마커 유형 
+mk_name	 | M          | string    | 마커명
+grid_x	 | M          | decimal   | 마커 위치 x 축 좌표 ( 0.00 ~ 100.00. x 축 좌표 내  % 값을 이용 )  
+grid_y | M          | decimal   | 마커 위치 y 축 좌표 ( 0.00 ~ 100.00. y 축 좌표 내  % 값을 이용 )
+attached_target | M          | number    | 마커 부착 목표물. 1: 공사구간, 2: 진행현황바
+actual_location | M          | number    | 실제 위치 여부. 0: 아님 ( 표시 용도 ), 1: 실제 위치. IOT센서, AP센서, QR, CCTV 등 기기류의 실제 위치 지정 여부
+lnk_url        | O          | string  | 외부 링크 URL. 링크 공사구역 관리번호와 함께 셋팅할 수 없다.
+lnk_cstrt_no	 | O          | number    | 링크 공사구역 관리번호. 마커 유형이 라벨(1), 아이콘(2) 인 경우 사용
+label_text	 | O          | string    | 라벨 표시 텍스트. 마커 유형이 라벨(1) 인 경우 사용
+ap_sensor_stat| O          | object    | Ap 센서 감지 근로자 현황. 마커 유형이 라벨(1) 이고 링크된 공사구역이 있는 경우 사용. 설정화면에서는 미사용
+icon_type	 | O          | number    | 아이콘 유형. 마커 유형이 아이콘(2) 인 경우 사용
+icon_info | O          | object    | 아이콘 정보. 마커 유형이 아이콘(2) 인 경우 사용
+ref_device_idx | O          | number    | 디바이스 관리번호. 마커 유형이 IOT센서(3), BLE GW(5) 인 경우 사용
+device_info | O          | object    | 디바이스 정보. 마커 유형이 IOT센서(3), BLE GW(5) 인 경우 사용
+ref_sensor_idx | O          | number    | AP 센서 관리번호. 마커 유형이 AP센서(4) 인 경우 사용
+ap_sensor_info | O          | object    | AP 센서 정보 및 디텍팅 근로자 수 정보. 마커 유형이 AP센서(4) 인 경우 사용
+ref_qr_stk_no | O          | number    | 진출/입 QR 관리번호. 마커 유형이 QR(6) 인 경우 사용
+ref_cctv_no | O          | number    | CCTV 관리번호. 마커 유형이 CCTV(7) 인 경우 사용
+option | O          | object    | 마커 옵션 설정 정보
+style | O          | object    | 마커 style 설정 정보
 
 ### ap_sensor_stat ( Ap 센서 감지 근로자 현황 )
 

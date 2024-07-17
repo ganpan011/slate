@@ -24,6 +24,7 @@ BLE mode 화면 표시를 위한 구성 정보 조회 API 입니다.
         "grid_x": 10.12,
         "grid_y": 98.99,
         "label_text": "라벨 표시 텍스트",
+        "lnk_url": "외부 링크 URL",
         "lnk_cstrt_no": 1,
         "attached_target": 1,
         "ap_sensor_stat" : {
@@ -46,6 +47,7 @@ BLE mode 화면 표시를 위한 구성 정보 조회 API 입니다.
         "grid_x": 10.12,
         "grid_y": 98.99,
         "attached_target": 1,
+        "lnk_url": "외부 링크 URL",
         "lnk_cstrt_no": 3,
         "icon_type" : 1,
         "icon_info" : {

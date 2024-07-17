@@ -105,6 +105,7 @@ full_name | M          | string          | 공사구간 full 명 ( 상위 공사
         "grid_x": 10.12,
         "grid_y": 98.99,
         "label_text": "라벨 표시 텍스트",
+        "lnk_url": "외부 링크 URL",
         "lnk_cstrt_no": 1,
         "actual_location": 1,
         "attached_target": 1,
@@ -193,6 +194,7 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "grid_y": 98.99,
       "attached_target" : 1,
       "actual_location" : 1,
+      "lnk_url": "http://naver.com",
       "lnk_cstrt_no": 2,
       "label_text": "라벨 표시 텍스트",
       "option": {
@@ -210,6 +212,7 @@ progressbar | M          | 진행현황 바 정보. 상세내용은 [BleProgress
       "grid_y": 98.99,
       "attached_target" : 1,
       "actual_location" : 1,
+      "lnk_url": "http://naver.com",
       "lnk_cstrt_no": 3,
       "icon_type" : 1,
       "option": {
