@@ -12,8 +12,9 @@ includes:
   - auth_login_out
   - sm_base_api
   - ble_monitor_api
-  - gps_monitor_api
   - marker_setting_api
+  - gps_monitor_api
+  - gps_marker_setting_api
   - construct_section_api
   - cctv_api
   - device_api
@@ -103,6 +104,8 @@ V0.98.4 | 2024-05-22 | 날씨 관련 하늘형태 코드 추가
 V0.98.5 | 2024-05-30 | 기타 참고사항으로 PTZ 관련 reference 추가
 V0.98.6 | 2024-06-03 | 센서 감지 근로자 정보 전달시 감지된 센서의 마커 관리번호도 함께 전달하도록 추가
 V0.98.7 | 2024-07-17 | 마커 ( 레이블, 아이콘 ) 조회 및 저장시 외부 링크 URL ( lnk_url ) 추가
+V0.99.0 | 2024-09-04 | 지도기반 모니터링 API, 지도 Marker 셋팅 API, CCTV API 변경
+
 
 ## 리뉴얼로 인해 API 변경이 필요한 사항 ( 기존 컴포넌트 UI 변경 필요 ) 
 
@@ -112,7 +115,7 @@ V0.98.7 | 2024-07-17 | 마커 ( 레이블, 아이콘 ) 조회 및 저장시 외�
 
 ## 미구현 리스트
 
-
+1. CCTV 현장관제를 위한 API
 
 ## 인증 방식
 

@@ -1,4 +1,4 @@
-# BLE Monitor API
+# BLE(도면기반) 모니터링 API
 
 BLE mode 화면 표시를 위한 구성 정보 조회 API 입니다.
 

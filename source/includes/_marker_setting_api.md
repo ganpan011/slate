@@ -1,4 +1,4 @@
-# Marker 셋팅
+# BLE(도면기반) Marker 셋팅
 
 설정화면에서 Marker 셋팅을 수행하기 위한 API 를 제공한다.
 
