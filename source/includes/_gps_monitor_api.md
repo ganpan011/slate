@@ -930,7 +930,7 @@ state | M          | Number            | 상태
 state_name | M          | String            | 상태명
 need_check | M          | Number            | 점검 필요 유무
 measure_time | M          | Date              | 데이터 측정 시간
-supported_data_list | M          | List<MeasureData> | AP 센서 관리번호
+supported_data_list | M          | List<MeasureData> | 지원되는 측정 정보 리스트
 
 
 ##### MeasureData
@@ -948,6 +948,67 @@ state | M          | Number | 상태
 state_name | M          | String | 상태명
 exist_recent_data | M          | Number | 측정 데이터 존재 유무 
 measure_data | M          | Object | 측정 데이터 정보. 디바이스 유형별로 상이
+
+> 유해물질 측정 데이터 ( measure_data ) 전문 예시
+
+```json
+{"o2":20.6,"h2s":0,"co":0,"ch4":0,"co2":0,"feel_temperature":-100,"discomfort":46.3,"battery":-1,"hazard_phrase":"","temperature":0,"humidity":0}
+```
+
+> 기울기 측정 데이터 ( measure_data ) 전문 예시
+
+```json
+{"tilt_x":0.398,"tilt_y":0,"tilt_z":0.038}
+```
+
+> 기울기 측정 데이터 ( measure_data ) 전문 예시
+
+```json
+{"tilt_x":0.398,"tilt_y":0,"tilt_z":0.038}
+```
+
+> 풍속계 측정 데이터 ( measure_data ) 전문 예시
+
+```json
+{"speed":3.9,"latest_max":4.1,"latest_avg":4}
+```
+
+> 소음 측정 데이터 ( measure_data ) 전문 예시
+
+```json
+{"noise":6.07,"noise_avg":10,"noise_max":7.06}
+```
+
+> 미세먼지 측정 데이터 ( measure_data ) 전문 예시
+
+```json
+{"pm10":19,"pm2.5":12,"pm1.0":8}
+```
+
+> 화재감지 측정 데이터 ( measure_data ) 전문 예시
+
+```json
+{"detection_time":"2024-02-15T04:22:50.000+00:00"}
+```
+
+> 수질 측정 데이터 ( measure_data ) 전문 예시
+
+```json
+{"ph":9.87,"ss":47.91}
+```
+
+
+> 협착/열차 접근 감지 측정 데이터 ( measure_data ) 전문 예시
+
+```json
+{"detect":0}
+```
+
+> 복합환경센서 측정 데이터 ( measure_data ) 전문 예시
+
+```json
+{"pm25":29,"pm10":11,"leq":57.9,"lmax":1.7,"temperature":35,"feel_temperature":36.83,"humidity":75.1,"rainfall":29.8,"windspeed":7,"winddirection":120,"windspeed_latest_avg":31.35,"windspeed_latest_max":60,"windspeed_recently_avg":38.92,"windspeed_recently_max":115.4,"tsp":24}
+```
 
 
 #### Cctv
@@ -1099,4 +1160,108 @@ latitude | M          | decimal | 위도
 measure_time | M          | number  | 측정시간
 
 
+
+
+
+## 현장 지도(위치) 설정 정보 조회
+
+> 응답 전문 예시
+
+```JSON
+{
+  "context": {
+    "gps_map_type": 1,
+    "gps_map_level": 4,
+    "gps_center_lat": 37.73398853063353,
+    "gps_center_long": 128.86830269559175
+  },
+  "return_code": 0,
+  "return_message": "Success"
+}
+```
+
+현장 지도(위치) 설정 정보를 제공한다.
+
+<aside class="notice">
+사용자 인증 ( HTTP Bearer ) 필요 
+</aside>
+
+기존 API 사용. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20GPS%20Mode%20API%20/coordinateUsingGET)
+
+
+### HTTP Request
+
+`GET /imoa/api/monitor/4.3/workplace/{wp_no}/gps/coordinate`
+
+### Path Variable
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------| -----------| -----------
+wp_no | M          | number | 현장 관리번호
+
+### Response Body
+
+항목 | 필수 여부(M/O) | 데이터 타입      | 설명
+--------- |------------|-------------| -----------
+gps_map_type | O          | Number      | GPS Map 접속시 초기 Map 타입. 1: 일반, 2: 위성지도
+gps_map_level | O          | Number      | GPS 모니터링시 초기 지도 맵 레벨
+gps_center_lat | O          | Double      | 지도 중심 GPS latitude
+gps_center_long | O          | Double | 지도 중심 GPS longitude
+
+* MapCoordinate 와 동일
+
+
+## 현장 지도(위치) 설정 정보 저장
+
+
+> 요청 전문 예시
+
+```JSON
+{
+  "gps_map_type": 1,
+  "gps_map_level": 4,
+  "gps_center_lat": 37.73398853063353,
+  "gps_center_long": 128.86830269559176
+}
+```
+
+현장 지도(위치) 설정 정보 저장을 제공한다.
+
+<aside class="notice">
+사용자 인증 ( HTTP Bearer ) 필요 
+</aside>
+
+기존 API 사용. [Swagger](https://ras.hulandev.co.kr/imoa/swagger-ui/index.html#/%5B4.3%5D%20IMOS%20%ED%98%84%EC%9E%A5%EA%B4%80%EC%A0%9C%20GPS%20Mode%20API%20/coordinateUsingGET)
+
+
+### HTTP Request
+
+`POST /imoa/api/monitor/4.3/workplace/{wp_no}/gps/coordinate`
+
+### Path Variable
+
+항목 | 필수 여부(M/O) | 데이터 타입 | 설명
+--------- |------------| -----------| -----------
+wp_no | M          | number | 현장 관리번호
+
+### Request Body
+
+항목 | 필수 여부(M/O) | 데이터 타입      | 설명
+--------- |------------|-------------| -----------
+gps_map_type | M          | Number      | GPS Map 접속시 초기 Map 타입. 1: 일반, 2: 위성지도
+gps_map_level | M          | Number      | GPS 모니터링시 초기 지도 맵 레벨
+gps_center_lat | M          | Double      | 지도 중심 GPS latitude
+gps_center_long | M          | Double | 지도 중심 GPS longitude
+
+### Response Body
+
+항목 | 필수 여부(M/O) | 데이터 타입      | 설명
+--------- |------------|-------------| -----------
+gps_map_type | M          | Number      | GPS Map 접속시 초기 Map 타입. 1: 일반, 2: 위성지도
+gps_map_level | M          | Number      | GPS 모니터링시 초기 지도 맵 레벨
+gps_center_lat | M          | Double      | 지도 중심 GPS latitude
+gps_center_long | M          | Double | 지도 중심 GPS longitude
+
+
+* MapCoordinate 와 동일
 

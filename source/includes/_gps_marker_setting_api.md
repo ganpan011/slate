@@ -199,6 +199,14 @@ menu_list[].device_menu_list[].sensor_count | M          | Number       | 해당
   AP 인 경우 AP Sensor 선택 리스트를 이용하여야 한다.
 
 
+#### MapCoordinate
+
+항목 | 필수 여부(M/O) | 데이터 타입      | 설명
+--------- |------------|-------------| -----------
+gps_map_type | O          | Number      | GPS Map 접속시 초기 Map 타입. 1: 일반, 2: 위성지도
+gps_map_level | O          | Number      | GPS 모니터링시 초기 지도 맵 레벨
+gps_center_lat | O          | Double      | 지도 중심 GPS latitude
+gps_center_long | O          | Double | 지도 중심 GPS longitude
 
 
 ## 화면 설정을 위한 기 지정된 마커 및 주요지점등 구성 정보 조회
