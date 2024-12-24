@@ -110,6 +110,7 @@ coop_no | M          | number | 협력사 관리번호
 coop_name | M          | string | 협력사명
 mb_no | M          | number | 사용자 관리번호
 mb_name | M          | string | 사용자명
+authorized | M | number | 인가자 여부. 0: 미인가, 1: 인가
 coop_section_name | M          | string | 협력사 공종 ( work_section_name_a )
 worker_section_name | M          | string | 근로자 공종 ( work_section_name_b )
 slr_datetime | O          | number | 센서 접근 시간
